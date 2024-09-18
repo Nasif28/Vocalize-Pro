@@ -1,9 +1,14 @@
 // components/HeroSection.tsx
+import Navbar from "./Navbar";
 import { Button } from "./ui/Button";
 
 export default function HeroSection() {
   return (
-    <section className="bg-blue-900 text-white px-8 py-20">
+    <section
+      style={{ background: "rgba(74, 43, 241, 1)" }}
+      className="min-h-[886px] text-white"
+    >
+      <Navbar />
       <div className="max-w-4xl mx-auto text-center">
         {/* Headline */}
         <h1 className="text-4xl font-extrabold leading-tight md:text-5xl">

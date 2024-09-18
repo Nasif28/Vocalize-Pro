@@ -1,18 +1,13 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const beVietnamPro = Be_Vietnam_Pro({
+  weight: ["400", "500", "700"], // Specify the weights you need
+  subsets: ["latin"], // Specify the subsets
+  variable: "--font-be-vietnam-pro", // CSS variable to use the font globally
 });
 
 export const metadata: Metadata = {
@@ -28,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased max-w-1980 mx-auto px-4`}
+        className={`${beVietnamPro.variable}  antialiased max-w-1980 mx-auto`}
       >
         <ThemeProvider
           attribute="class"
@@ -36,7 +31,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Navbar />
+          {/* <Navbar /> */}
           <main className="h-[calc(100vh-94px)] overflow-y-auto">
             {children}
           </main>

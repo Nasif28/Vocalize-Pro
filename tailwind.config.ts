@@ -56,9 +56,9 @@ const config: Config = {
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
-    //   maxWidth: {
-    //     "1980": "1980px",
-    //   },
+      fontFamily: {
+        vietnam: ["var(--font-be-vietnam-pro)", "sans-serif"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
