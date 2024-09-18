@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
-import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 
 const beVietnamPro = Be_Vietnam_Pro({
@@ -31,11 +30,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {/* <Navbar /> */}
-          <main className="h-[calc(100vh-94px)] overflow-y-auto">
-            {children}
-          </main>
-          {/* <Footer /> */}
+          <main>{children}</main>
         </ThemeProvider>
       </body>
     </html>

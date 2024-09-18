@@ -3,21 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ffffff; /* Light mode background */
+  --foreground: #171717; /* Light mode foreground */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Dark mode styles */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
 }
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a; 
+    --foreground: #ededed; 
+  }
+} */
 
 body {
-  color: var(--foreground);
   background: var(--background);
-  font-family: var(--font-be-vietnam-pro), sans-serif;
+  color: var(--foreground);
+  font-family: var(
+    --font-be-vietnam-pro,
+    sans-serif
+  ); /* Make sure the variable is set or fallback to sans-serif */
 }
 
 @layer utilities {
@@ -93,4 +102,11 @@ body {
 
 .myContainer {
   max-width: 1650px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.maxContainer {
+  max-width: 1980px;
+  margin: 0 auto;
 }

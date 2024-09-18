@@ -1,7 +1,12 @@
+import ChooseUs from "@/components/ChooseUs";
 import HeroSection from "@/components/HeroSection";
-import { Button } from "@/components/ui/button";
 import * as React from "react";
 
 export default function Home() {
-  return <HeroSection />;
+  return (
+    <div>
+      <HeroSection />
+      <ChooseUs />
+    </div>
+  );
 }
