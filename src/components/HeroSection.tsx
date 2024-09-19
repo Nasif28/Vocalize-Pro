@@ -49,7 +49,6 @@ export default function HeroSection() {
           className="hidden md:block absolute top-32 left-96"
         />
 
-        {/* Add more icons as needed */}
       </div>
 
       {/* Main Content */}

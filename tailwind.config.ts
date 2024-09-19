@@ -58,6 +58,7 @@ const config: Config = {
       },
       fontFamily: {
         vietnam: ["var(--font-be-vietnam-pro)", "sans-serif"],
+        workSans: ['"Work Sans"', 'sans-serif'],
       },
     },
   },

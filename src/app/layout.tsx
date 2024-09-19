@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${beVietnamPro.variable}  antialiased max-w-1980 mx-auto`}
+        className={`${beVietnamPro.variable}  antialiased maxContainer`}
       >
         <ThemeProvider
           attribute="class"
