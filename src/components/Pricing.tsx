@@ -165,6 +165,7 @@ const Pricing = () => {
       }}
     >
       <section className="myContainer">
+
         {/* Title and Switch */}
         <div className="text-center mb-8 pt-28">
           <h2 className="text-5xl text-center font-bold  ">Our Pricing Plan</h2>
@@ -174,9 +175,10 @@ const Pricing = () => {
             various content formats.
           </p>
 
+          {/* Switch Section */}
           <div className="flex justify-center items-center mt-6 rounded-full shadow-md border border-gray-200 py-2  px-10 max-w-min mx-auto">
             <span
-              className={`text-gray-600 font-bold mr-4 ${
+              className={` font-bold  ${
                 !isYearly ? "text-[#4A2BF1]" : "text-[#08212980]"
               }`}
             >
@@ -186,19 +188,19 @@ const Pricing = () => {
             <Switch
               checked={isYearly}
               onChange={() => setIsYearly(!isYearly)}
-              className={`relative inline-flex items-center h-8 w-16 rounded-full px-2 ${
+              className={`relative inline-flex items-center h-8 w-16 rounded-full px-2 mx-5 ${
                 isYearly ? "bg-gray-200" : "bg-[#4A2BF1]"
               }`}
             >
               <span
-                className={`inline-block w-7 h-7 transform bg-white rounded-full transition-transform ${
+                className={` inline-block w-7 h-7 transform bg-white rounded-full transition-transform ${
                   isYearly ? "translate-x-6 bg-[#4A2BF1]" : "-translate-x-1"
                 }`}
               />
             </Switch>
 
             <span
-              className={`text-gray-600 ml-4 font-bold ${
+              className={`  font-bold ${
                 isYearly ? "text-[#4A2BF1]" : "text-[#08212980]"
               }`}
             >
@@ -244,7 +246,7 @@ const Pricing = () => {
                   <p className="mt-4 text-3xl font-bold  text-gray-900 duration-300 group-hover:text-white">
                     {plan.price}{" "}
                     <span className="text-sm  text-gray-500 duration-300 group-hover:text-white">
-                      /month
+                      {isYearly ? "/year" : "/month"}
                     </span>
                   </p>
                 </div>

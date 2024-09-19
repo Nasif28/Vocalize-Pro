@@ -2,6 +2,7 @@ import Achievements from "@/components/Achievements";
 import Blogs from "@/components/Blogs";
 import CarouselItem from "@/components/CarouselItem";
 import ChooseUs from "@/components/ChooseUs";
+import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
 import HowItWorks from "@/components/HowItWorks";
 import Pricing from "@/components/Pricing";
@@ -20,6 +21,7 @@ export default function Home() {
       <Manage />
       <Achievements />
       <Blogs />
+      <Footer />
     </div>
   );
 }
