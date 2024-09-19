@@ -39,7 +39,7 @@ const Solution = () => {
 
       {/* Content */}
       <div className="relative z-10 py-12 px-6 text-center text-white">
-        <h1 className="text-4xl font-bold mb-4">One Stop Solution</h1>
+        <h1 className="text-5xl font-bold mb-4">One Stop Solution</h1>
         <p className="text-lg mb-12">
           Your one-stop solution for transforming audio and <br /> video into a
           wide range of content formats.
@@ -56,14 +56,14 @@ const Solution = () => {
                   key={index}
                   className="flex-shrink-0 w-full flex items-center justify-center text-center py-12"
                 >
-                  <p className="text-lg">{item}</p>
+                  <div className="text-lg">{item}</div>
                 </div>
               ))}
             </div>
           </div>
 
           <div className="absolute inset-x-0 bottom-0 flex justify-center py-2">
-            <div className="flex space-x-4">
+            <div className="flex space-x-8">
               {carouselItems.map((_, index) => (
                 <div
                   key={index}

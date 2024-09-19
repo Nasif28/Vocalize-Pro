@@ -165,7 +165,6 @@ const Pricing = () => {
       }}
     >
       <section className="myContainer">
-
         {/* Title and Switch */}
         <div className="text-center mb-8 pt-28">
           <h2 className="text-5xl text-center font-bold  ">Our Pricing Plan</h2>
@@ -176,7 +175,7 @@ const Pricing = () => {
           </p>
 
           {/* Switch Section */}
-          <div className="flex justify-center items-center mt-6 rounded-full shadow-md border border-gray-200 py-2  px-10 max-w-min mx-auto">
+          <div className="flex justify-center items-center mt-6 rounded-full shadow-md border  py-3  px-10 max-w-min mx-auto">
             <span
               className={` font-bold  ${
                 !isYearly ? "text-[#4A2BF1]" : "text-[#08212980]"
@@ -262,7 +261,7 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className="rounded-xl mt-8 w-full group-hover:bg-[#4A2BF1] group-hover:text-white bg-white text-[#4A2BF1] border group-hover:border-collapse border-[#4A2BF1]">
+                <Button className="rounded-xl mt-8 py-5 w-full group-hover:bg-[#4A2BF1] group-hover:text-white bg-white text-[#4A2BF1] border group-hover:border-collapse border-[#4A2BF1]">
                   {plan.buttonText}
                 </Button>
               </div>

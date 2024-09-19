@@ -1,6 +1,6 @@
 import React from "react";
 import { LuArrowRightCircle } from "react-icons/lu";
-import { Button } from "./button";
+import { Button } from "./ui/button";
 
 const Manage = () => {
   return (
@@ -19,7 +19,7 @@ const Manage = () => {
         />
       </div>
 
-      <div className="myContainer relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center text-center lg:text-left">
+      <div className="myContainer relative z-10 grid grid-cols-1 lg:grid-cols-2 items-center text-center lg:text-left">
         {/* Text Section */}
         <div>
           <h3 className="text-[40px] lg:text-[55px] leading-[48px] lg:leading-[63px] font-bold mb-4 pr-0 lg:pr-4">
@@ -50,7 +50,7 @@ const Manage = () => {
           <img
             src="/manage/ipad.png"
             alt="Podcast Dashboard"
-            className="w-full object-cover hidden lg:block"
+            className="w-fit object-cover hidden lg:block"
           />
         </div>
       </div>
