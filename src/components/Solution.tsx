@@ -3,11 +3,15 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
+import CarouselItem from "./CarouselItem";
 
 const carouselItems = [
-  "Slide 1: Lorem ipsum dolor sit amet.",
-  "Slide 2: Consectetur adipiscing elit.",
-  "Slide 3: Integer nec odio. Praesent libero.",
+  // "Slide 1: Lorem ipsum dolor sit amet.",
+  // "Slide 2: Consectetur adipiscing elit.",
+  // "Slide 3: Integer nec odio. Praesent libero.",
+  <CarouselItem />,
+  <CarouselItem />,
+  <CarouselItem />,
 ];
 
 const Solution = () => {
@@ -50,7 +54,7 @@ const Solution = () => {
               {carouselItems.map((item, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 w-full h-64 flex items-center justify-center text-center"
+                  className="flex-shrink-0 w-full flex items-center justify-center text-center py-12"
                 >
                   <p className="text-lg">{item}</p>
                 </div>
@@ -59,14 +63,19 @@ const Solution = () => {
           </div>
 
           <div className="absolute inset-x-0 bottom-0 flex justify-center py-2">
-            <div className="flex space-x-2">
+            <div className="flex space-x-4">
               {carouselItems.map((_, index) => (
-                <Button
+                <div
                   key={index}
-                  className={cn(
-                    "w-3 h-3 rounded-full transition-colors",
-                    currentIndex === index ? "bg-blue-500" : "bg-gray-300"
-                  )}
+                  className="rounded-full transition-colors duration-300"
+                  style={{
+                    width: "20px",
+                    height: "20px",
+                    backgroundColor:
+                      currentIndex === index
+                        ? "rgba(255, 255, 255, 1)"
+                        : "rgba(255, 255, 255, 0.5)", // White when active, 50% transparent white when inactive
+                  }}
                   onClick={() => setCurrentIndex(index)}
                 />
               ))}
