@@ -2,8 +2,9 @@ import React from "react";
 
 const HowItWorks = () => {
   return (
-    <div
+    <section
       className="maxContainer py-24"
+      id="works"
       style={{
         background:
           "linear-gradient(134.17deg, rgba(25, 194, 221, 0.1) 1.77%, rgba(74, 43, 241, 0.1) 98.9%)",
@@ -433,7 +434,7 @@ const HowItWorks = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

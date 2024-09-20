@@ -6,6 +6,7 @@ import { Button } from "./ui/Button";
 export default function HeroSection() {
   return (
     <section
+      id="home"
       style={{ background: "rgba(74, 43, 241, 1)" }}
       className=" text-white relative w-full pt-5"
     >
@@ -48,7 +49,6 @@ export default function HeroSection() {
           alt="Icon 1"
           className="hidden md:block absolute top-32 left-96"
         />
-
       </div>
 
       {/* Main Content */}

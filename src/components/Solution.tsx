@@ -30,7 +30,8 @@ const Solution = () => {
   };
 
   return (
-    <div
+    <section
+    id="about"
       className="relative w-full h-full bg-cover bg-center py-10"
       style={{ backgroundImage: 'url("/solution/bg.png")' }}
     >
@@ -83,7 +84,7 @@ const Solution = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

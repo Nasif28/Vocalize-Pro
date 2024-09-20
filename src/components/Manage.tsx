@@ -4,7 +4,7 @@ import { Button } from "./ui/button";
 
 const Manage = () => {
   return (
-    <section className="relative py-12 lg:py-28 flex items-center justify-center">
+    <section  id="schedule" className="relative py-12 lg:py-28 flex items-center justify-center">
       {/* Decorative Images */}
       <div className="absolute inset-0 pointer-events-none hidden lg:block">
         <img

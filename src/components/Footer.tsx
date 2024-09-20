@@ -13,7 +13,8 @@ const Footer = () => {
   };
 
   return (
-    <div
+    <section
+     id="contact"
       className="bg-[#120339] pt-32 relative"
       style={{ clipPath: "polygon(0 16%, 100% 0, 100% 100%, 0% 100%)" }}
     >
@@ -159,7 +160,7 @@ const Footer = () => {
           <hr className="border-t-1 border-[#FFFFFF29]" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

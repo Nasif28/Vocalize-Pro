@@ -158,7 +158,8 @@ const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section
+    <section 
+    id="pricing"
       style={{
         background:
           "linear-gradient(103.67deg, rgba(11, 79, 211, 0.05) 2.48%, rgba(255, 104, 0, 0.05) 100%)",

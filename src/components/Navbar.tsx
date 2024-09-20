@@ -3,7 +3,9 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ThemeSwitcher } from "./theme-switcher";
 import { LanguageSwitcher } from "./language-switcher";
-import { PersonIcon } from "@radix-ui/react-icons";
+import { NavMenu } from "./Dashboard/Navbar2";
+import { CircleUser } from "lucide-react";
+import { GoPersonAdd } from "react-icons/go";
 // import { PersonIcon, PersonPlusIcon } from "@radix-ui/react-icons"; // Replace with correct import for your icon library
 // import Logo from "@/public/logo.png";
 
@@ -14,71 +16,12 @@ export default function Navbar() {
         <Link href="/">
           <div className="flex items-center space-x-2">
             <img src="/logo.png" alt="Logo" className="h-32px w-32.25px" />
-            <div className="text-[22px] font-extrabold leading-[27.83px] ">
-              Vocalizepro
-            </div>
+            <div className="text-[26px] pt-1 font-extrabold  ">Vocalizepro</div>
           </div>
         </Link>
 
         {/* Middle - Navigation Menu */}
-        <ul className="hidden md:flex space-x-12 opacity-100">
-          <li>
-            <Link
-              href="/home"
-              className="text-[16px] leading-[20.24px]   pb-1 hover: border-b-2 border-transparent hover:border-current transition-colors duration-300"
-            >
-              Home
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/how-it-works"
-              className="text-[16px] leading-[20.24px] pb-1 hover:border-b-2 border-transparent hover:border-current transition-colors duration-300"
-            >
-              How It Works
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/about"
-              className="text-[16px] leading-[20.24px] pb-1 hover:border-b-2 border-transparent hover:border-current transition-colors duration-300"
-            >
-              About
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/pricing"
-              className="text-[16px] leading-[20.24px] pb-1 hover:border-b-2 border-transparent hover:border-current transition-colors duration-300"
-            >
-              Pricing
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/contact"
-              className="text-[16px] leading-[20.24px] pb-1 hover:border-b-2 border-transparent hover:border-current transition-colors duration-300"
-            >
-              Contact
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/faq"
-              className="text-[16px] leading-[20.24px] pb-1 hover:border-b-2 border-transparent hover:border-current transition-colors duration-300"
-            >
-              FAQ
-            </Link>
-          </li>
-          <li>
-            <Link
-              href="/schedule"
-              className="text-[16px] leading-[20.24px] pb-1 hover:border-b-2 border-transparent hover:border-current transition-colors duration-300"
-            >
-              Schedule
-            </Link>
-          </li>
-        </ul>
+        <NavMenu />
 
         {/* Right Side - Login, Signup, and Dark Mode Toggle */}
         <div className="flex items-center space-x-4">
@@ -88,19 +31,24 @@ export default function Navbar() {
           {/* Dark Mode Toggle */}
           <ThemeSwitcher />
 
-          <div className="flex space-x-4">
+          {/* Login Button */}
+          <Link href="/auth" passHref>
             <Button variant="ghost">
-              <PersonIcon className="h-5 w-5 mr-2" />
+              <CircleUser className="h-5 w-5 mr-2" />
               Login
             </Button>
+          </Link>
+
+          {/* Sign Up Button */}
+          <Link href="/auth" passHref>
             <Button
-              className="hidden md:inline-flex items-center justify-center rounded-[12px] p-[20px_30px] text-[rgba(74,43,241,1)]"
+              className="hidden md:inline-flex items-center justify-center rounded-2xl p-[22px_28px] text-[rgba(74,43,241,1)]"
               variant="secondary"
             >
-              <PersonIcon className="h-5 w-5" />
+              <GoPersonAdd className="h-5 w-5 mr-2" />
               Sign Up
             </Button>
-          </div>
+          </Link>
         </div>
 
         {/* Mobile Menu Toggle (hamburger menu) */}
