@@ -1,6 +1,6 @@
 import AuthTabs from '@/components/auth/AuthTabs';
 
-const AuthPage = () => {
+const Login = () => {
   return (
     <>
       <AuthTabs />
@@ -8,4 +8,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+export default Login;

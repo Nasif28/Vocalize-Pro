@@ -1,64 +1,78 @@
 "use client";
-import * as z from "zod";
+import { signIn } from "next-auth/react";
 import { useForm } from "react-hook-form";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState } from "react";
+
+import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
-  FormControl,
   FormField,
   FormItem,
   FormLabel,
+  FormControl,
   FormMessage,
 } from "@/components/ui/form";
 import {
   Card,
-  CardContent,
-  CardDescription,
   CardHeader,
+  CardContent,
   CardTitle,
+  CardDescription,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   email: z
     .string()
-    .min(1, {
-      message: "Email is required",
-    })
-    .email({
-      message: "Please enter a valid email",
-    }),
-  password: z.string().min(1, {
-    message: "Password is required",
-  }),
+    .min(1, { message: "Email is required" })
+    .email({ message: "Please enter a valid email" }),
+  password: z.string().min(1, { message: "Password is required" }),
 });
 
 const LoginForm = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
-    defaultValues: {
-      email: "",
-      password: "",
-    },
+    defaultValues: { email: "", password: "" },
   });
 
-  const handleSubmit = (data: z.infer<typeof formSchema>) => {
-    router.push("/");
+  const handleSubmit = async (data: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
+
+    // Extract the callbackUrl from the query params or fallback to '/'
+    const callbackUrl = searchParams.get("callbackUrl") || "/";
+
+    const res = await signIn("credentials", {
+      redirect: false,
+      email: data.email,
+      password: data.password,
+      callbackUrl,
+    });
+    console.log(callbackUrl);
+    setIsSubmitting(false);
+
+    if (res?.ok && res?.url) {
+      router.push(callbackUrl);
+    // if (res?.ok) {
+    //   router.push(res.url || callbackUrl);
+    } else {
+      alert("Invalid credentials");
+    }
   };
 
   return (
     <Card>
       <CardHeader>
         <CardTitle>Login</CardTitle>
-        <CardDescription>
-          Log into your account with your credentials
-        </CardDescription>
+        <CardDescription>Log into your account</CardDescription>
       </CardHeader>
-      <CardContent className="space-y-2">
+      <CardContent className="space-y-6">
         <Form {...form}>
           <form
             onSubmit={form.handleSubmit(handleSubmit)}
@@ -69,34 +83,24 @@ const LoginForm = () => {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-white">
-                    Email
-                  </FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input
-                      className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible: ring-offset-0"
-                      placeholder="Enter Email"
-                      {...field}
-                    />
+                    <Input placeholder="Enter your email" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
-
             <FormField
               control={form.control}
               name="password"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="uppercase text-xs font-bold text-zinc-500 dark:text-white">
-                    Password
-                  </FormLabel>
+                  <FormLabel>Password</FormLabel>
                   <FormControl>
                     <Input
                       type="password"
-                      className="bg-slate-100 dark:bg-slate-500 border-0 focus-visible:ring-0 text-black dark:text-white focus-visible: ring-offset-0"
-                      placeholder="Enter Password"
+                      placeholder="Enter your password"
                       {...field}
                     />
                   </FormControl>
@@ -104,8 +108,9 @@ const LoginForm = () => {
                 </FormItem>
               )}
             />
-
-            <Button className="w-full">Sign In</Button>
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? "Signing In..." : "Sign In"}
+            </Button>
           </form>
         </Form>
       </CardContent>
