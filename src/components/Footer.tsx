@@ -96,8 +96,8 @@ const Footer = () => {
 
         {/* Footer Section */}
         <div className="  py-6 ">
-          <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-12 text-left">
-            <div>
+          <div className="container  mx-auto grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-8 py-12 text-left">
+            <div className=" mx-auto">
               <h4 className="text-[#FFFFFFCC] font-bold mb-4 pb-8">
                 Social Media
               </h4>
@@ -112,7 +112,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            <div className=" mx-auto">
               <h4 className="text-[#FFFFFFCC] font-bold mb-4 pb-8">Links</h4>
 
               <ul className="space-y-2 text-[#FFFFFF80] leading-[32px]">
@@ -122,7 +122,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            <div className=" mx-auto">
               <h4 className="text-[#FFFFFFCC] font-bold mb-4 pb-8">
                 Resources
               </h4>
@@ -136,7 +136,7 @@ const Footer = () => {
               </ul>
             </div>
 
-            <div>
+            <div className=" mx-auto">
               <h4 className="text-[#FFFFFFCC] font-bold mb-4 pb-8">
                 Need Help?
               </h4>

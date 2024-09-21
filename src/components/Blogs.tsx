@@ -86,7 +86,7 @@ const Blogs = () => {
         </div>
 
         {/* Cards */}
-        <div className="mb-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="mb-24 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
           {cards.map((card, idx) => (
             <div
               key={idx}

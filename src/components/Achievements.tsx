@@ -14,9 +14,9 @@ const Achievements = () => {
 
       {/* Content */}
       <div className="muContainer relative z-10 container mx-auto p-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 text-left py-5">
+        <div className="items-center mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-10 text-left py-5">
           {/* Box 1 */}
-          <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
+          <div className="bg-white mx-auto bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
             <div className="flex justify-start w-full">
               <img
                 src="/achievements/a1.png"
@@ -38,7 +38,7 @@ const Achievements = () => {
           </div>
 
           {/* Box 2 */}
-          <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
+          <div className="bg-white mx-auto bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
             <div className="flex justify-start w-full">
               <img
                 src="/achievements/a2.png"
@@ -60,7 +60,7 @@ const Achievements = () => {
           </div>
 
           {/* Box 3 */}
-          <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
+          <div className="bg-white mx-auto bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
             <div className="flex justify-start w-full">
               <img
                 src="/achievements/a3.png"
@@ -82,7 +82,7 @@ const Achievements = () => {
           </div>
 
           {/* Box 4 */}
-          <div className="bg-white bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
+          <div className="bg-white mx-auto bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
             <div className="flex justify-start w-full">
               <img
                 src="/achievements/a4.png"

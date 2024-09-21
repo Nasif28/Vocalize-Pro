@@ -210,7 +210,7 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 pb-28">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 pb-28">
           {pricingPlans[isYearly ? "yearly" : "monthly"].map((plan, idx) => (
             <div
               key={idx}

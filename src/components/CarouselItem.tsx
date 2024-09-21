@@ -23,7 +23,7 @@ const CarouselItem = () => {
   }
 
   return (
-    <div className="myContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-5">
+    <div className="myContainer grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-6 px-5">
       {/* First column */}
       <div>
         <Card

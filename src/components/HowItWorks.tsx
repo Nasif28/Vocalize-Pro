@@ -3,7 +3,7 @@ import React from "react";
 const HowItWorks = () => {
   return (
     <section
-      className="maxContainer py-24"
+      className="maxContainer py-24 overflow-hidden"
       id="works"
       style={{
         background:
