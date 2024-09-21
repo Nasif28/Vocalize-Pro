@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from "./../../../public/logo2.png";
-import { NavMenu } from "./Navbar2";
+import { NavMenu } from "../NavMenu";
 
 import { ThemeSwitcher } from "../theme-switcher";
 import { TbCrown } from "react-icons/tb";
@@ -12,7 +12,7 @@ import Account from "../Account";
 const NavbarDashboard = () => {
   return (
     <div className="maxContainer py-5 bg-white dark:bg-slate-700 text-black dark:text-white">
-      <div className="myContainer   py-2 px-5 flex justify-between">
+      <div className="myContainer py-2 px-5 flex justify-between">
         {/* Left Side Logo  */}
         <Link href="/">
           <div className="flex items-center space-x-2">
@@ -28,8 +28,8 @@ const NavbarDashboard = () => {
 
         {/* Right SIde Menu */}
         <div className="flex items-center">
-          <button className="bg-gradient-to-r from-[#19C2DD] to-[#355BFB] text-white  py-3 px-4 flex items-center gap-[10px] rounded-full shadow-lg">
-            <TbCrown className=" w-6 h-6" />
+          <button className="text-sm bg-gradient-to-r from-[#19C2DD] to-[#355BFB] text-white  py-2 px-3 flex items-center gap-[8px] rounded-full shadow-lg">
+            <TbCrown className=" w-5 h-5" />
             Upgrade Now
           </button>
 

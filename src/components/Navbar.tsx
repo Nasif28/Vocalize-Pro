@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ThemeSwitcher } from "./theme-switcher";
 import { LanguageSwitcher } from "./language-switcher";
-import { NavMenu } from "./Dashboard/Navbar2";
+import { NavMenu } from "./NavMenu";
 import { CircleUser } from "lucide-react";
 import { GoPersonAdd } from "react-icons/go";
 import { useRouter } from "next/navigation";

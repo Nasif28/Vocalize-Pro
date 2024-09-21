@@ -10,13 +10,6 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const { data: session, status } = useSession();
   const router = useRouter();
 
-  // useEffect(() => {
-  //   if (status === "loading") return; // Wait for session to load
-  //   if (!session) {
-  //     router.push("/auth"); // Redirect to login page if not logged in
-  //   }
-  // }, [session, status, router]);
-
   useEffect(() => {
     if (status === "unauthenticated") {
       // Redirect to /auth with the callbackUrl set to /dashboard
@@ -28,15 +21,15 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
   if (status === "loading" || !session) return null;
 
   return (
-    <>
+    <div className="bg-slate-100 dark:bg-slate-900">
       <Navbar />
-      <div className="flex">
-        <div className="hidden md:block h-[100vh] w-[300px]">
+      <div className="myContainer flex">
+        <div className="hidden md:block h-auto max-w-[300px] py-5">
           <Sidebar />
         </div>
-        <div className="p-5 w-full md:max-w-[1140px]">{children}</div>
+        <div className="p-5">{children}</div>
       </div>
-    </>
+    </div>
   );
 };
 
