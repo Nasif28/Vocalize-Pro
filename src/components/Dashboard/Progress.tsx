@@ -1,99 +1,86 @@
 "use client";
-
+import * as React from "react";
 import { PolarAngleAxis, RadialBar, RadialBarChart } from "recharts";
+import { Card, CardContent } from "@/components/ui/card";
+import { MonthSwitcher } from "../month-switcher";
 
-import { Card, CardContent } from "@/components//ui/card";
-import { ChartContainer } from "@/components//ui/chart";
+const Progress = () => {
+  const data = [
+    {
+      name: "Social Media Post",
+      value: 50,
+      fill: "#3457FF", // Blue color
+    },
+    {
+      name: "Blog Post",
+      value: 20,
+      fill: "#FFA500", // Orange color
+    },
+    {
+      name: "Article",
+      value: 30,
+      fill: "#00C49F", // Green color
+    },
+    {
+      name: "Generated summary",
+      value: 40,
+      fill: "#FF6384", // Pink color
+    },
+  ];
 
-export default function Progress() {
   return (
-    <Card className="w-full  border-none shadow-none">
-      <CardContent className="flex gap-4 p-4 max-h-[366px]">
-        <div className="grid items-center gap-2">
-          <div className="grid flex-1 auto-rows-min gap-0.5">
-            <div className="text-sm text-muted-foreground">Move</div>
-            <div className="flex items-baseline gap-1 text-xl font-bold tabular-nums leading-none">
-              562/600
-              <span className="text-sm font-normal text-muted-foreground">
-                kcal
-              </span>
-            </div>
-          </div>
-          <div className="grid flex-1 auto-rows-min gap-0.5">
-            <div className="text-sm text-muted-foreground">Exercise</div>
-            <div className="flex items-baseline gap-1 text-xl font-bold tabular-nums leading-none">
-              73/120
-              <span className="text-sm font-normal text-muted-foreground">
-                min
-              </span>
-            </div>
-          </div>
-          <div className="grid flex-1 auto-rows-min gap-0.5">
-            <div className="text-sm text-muted-foreground">Stand</div>
-            <div className="flex items-baseline gap-1 text-xl font-bold tabular-nums leading-none">
-              8/12
-              <span className="text-sm font-normal text-muted-foreground">
-                hr
-              </span>
-            </div>
-          </div>
+    <Card className="h-[366px]  w-full p-6 rounded-md grow ">
+      <CardContent className="flex justify-between items-center">
+        <div>
+          <h2 className="text-xl font-bold">Overall Progress</h2>
+          <p className="text-sm text-gray-700">
+            From here you can see your overall progress
+          </p>
         </div>
-        <ChartContainer
-          config={{
-            move: {
-              label: "Move",
-              color: "hsl(var(--chart-1))",
-            },
-            exercise: {
-              label: "Exercise",
-              color: "hsl(var(--chart-2))",
-            },
-            stand: {
-              label: "Stand",
-              color: "hsl(var(--chart-3))",
-            },
-          }}
-          className="mx-auto aspect-square w-full max-w-[80%]"
+        <MonthSwitcher />
+      </CardContent>
+
+      {/* <Separator className="mx-10" /> */}
+      <hr className="mx-3" />
+
+      <CardContent className="flex items-center justify-around ">
+        {/* Radial Bar Chart */}
+        <RadialBarChart
+          width={270}
+          height={270}
+          innerRadius="20%"
+          outerRadius="100%"
+          data={data}
+          startAngle={90}
+          endAngle={450}
+          barSize={14}
         >
-          <RadialBarChart
-            margin={{
-              left: -10,
-              right: -10,
-              top: -10,
-              bottom: -10,
-            }}
-            data={[
-              {
-                activity: "stand",
-                value: (8 / 12) * 100,
-                fill: "var(--color-stand)",
-              },
-              {
-                activity: "exercise",
-                value: (46 / 60) * 100,
-                fill: "var(--color-exercise)",
-              },
-              {
-                activity: "move",
-                value: (245 / 360) * 100,
-                fill: "var(--color-move)",
-              },
-            ]}
-            innerRadius="20%"
-            barSize={24}
-            startAngle={90}
-            endAngle={450}
-          >
-            <PolarAngleAxis
-              type="number"
-              domain={[0, 100]}
-              dataKey="value"
-              tick={false}
-            />
-            <RadialBar dataKey="value" background cornerRadius={5} />
-          </RadialBarChart>
-        </ChartContainer>
+          <PolarAngleAxis
+            type="number"
+            domain={[0, 100]}
+            dataKey="value"
+            angleAxisId={0}
+            tick={false}
+          />
+          <RadialBar background dataKey="value" cornerRadius={5} />
+        </RadialBarChart>
+
+        {/* Legend and Data */}
+        <div className="flex flex-col gap-6">
+          {data.map((item) => (
+            <div key={item.name} className="flex items-center gap-5">
+              <span
+                className="w-4 h-4 rounded-full"
+                style={{ backgroundColor: item.fill }}
+              ></span>
+              <p className="text-gray-600">{item.name}</p>
+              <span className="ml-auto text-sm font-medium">{item.value}</span>
+            </div>
+          ))}
+        </div>
       </CardContent>
     </Card>
   );
-}
+};
+
+export default Progress;

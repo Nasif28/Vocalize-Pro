@@ -12,6 +12,7 @@ import {
   Facebook,
   Twitter,
   Instagram,
+  ChevronDown,
 } from "lucide-react";
 
 import {
@@ -34,7 +35,7 @@ const Sidebar = () => {
       }}
     >
       <CommandList>
-        <CommandItem className="py-[13px] px-[16px] mb-3 gap-[10px] group bg-[#FFFFFF1A] border border-dashed border-[#FFFFFF80]">
+        <div className="flex items-center rounded-md py-[10px] px-[16px] mb-3 gap-[10px] group bg-[#FFFFFF1A] border border-dashed border-[#FFFFFF80]">
           <Plus className=" h-5 w-5 p-0.5 bg-white text-[#4A2BF1] rounded-full group-hover:bg-[#4A2BF1] group-hover:text-white" />
           <Link
             href=""
@@ -42,7 +43,7 @@ const Sidebar = () => {
           >
             Create New
           </Link>
-        </CommandItem>
+        </div>
 
         <CommandItem className="py-[13px] px-[16px] mb-3 gap-[10px] group ">
           <LayoutGrid className=" h-4 w-4 group-hover:text-[#4A2BF1]" />
@@ -109,8 +110,9 @@ const Sidebar = () => {
           <DropdownMenuTrigger className="focus:outline-none w-full">
             <CommandItem className="py-[13px] px-[16px] mb-3 gap-[10px] group ">
               <Waypoints className="h-5 w-5 group-hover:text-[#4A2BF1]" />
-              <span className="text-[16px] font-medium group-hover:text-[#4A2BF1]">
-                Social
+              <span className="flex text-[16px] font-medium group-hover:text-[#4A2BF1]">
+                Social Media
+                <ChevronDown />
               </span>
             </CommandItem>
           </DropdownMenuTrigger>

@@ -1,97 +1,104 @@
-"use client"
+"use client";
+import * as React from "react";
+import { PieChart, Pie, Cell } from "recharts";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { ChevronDownIcon } from "lucide-react";
+import { MonthSwitcher } from "../month-switcher";
+import ViewMore from "../ViewMore";
+// import { ChevronDownIcon } from "@heroicons/react/outline";
 
-import { TrendingUp } from "lucide-react"
-import { LabelList, Pie, PieChart } from "recharts"
+// Sample data based on the image
+const data = [
+  { name: "Total Post", value: 35, color: "#3457FF" }, // Blue
+  { name: "Total View", value: 25, color: "#FF6384" }, // Pink
+  { name: "Total Comments", value: 22, color: "#FFA500" }, // Orange
+  { name: "Total React", value: 10, color: "#00C49F" }, // Green
+];
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart"
+const RADIAN = Math.PI / 180;
+const renderLabel = ({
+  cx,
+  cy,
+  midAngle,
+  innerRadius,
+  outerRadius,
+  percent,
+  index,
+}) => {
+  const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
+  const x = cx + radius * Math.cos(-midAngle * RADIAN);
+  const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-export const description = "A pie chart with a label list"
-
-const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 90, fill: "var(--color-other)" },
-]
-
-const chartConfig = {
-  visitors: {
-    label: "Visitors",
-  },
-  chrome: {
-    label: "Chrome",
-    color: "hsl(var(--chart-1))",
-  },
-  safari: {
-    label: "Safari",
-    color: "hsl(var(--chart-2))",
-  },
-  firefox: {
-    label: "Firefox",
-    color: "hsl(var(--chart-3))",
-  },
-  edge: {
-    label: "Edge",
-    color: "hsl(var(--chart-4))",
-  },
-  other: {
-    label: "Other",
-    color: "hsl(var(--chart-5))",
-  },
-} satisfies ChartConfig
-
-export default function Post() {
   return (
-    <Card className="flex flex-col w-full border-none shadow-none">
-      <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Label List</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-1 pb-0">
-        <ChartContainer
-          config={chartConfig}
-          className="mx-auto aspect-square max-h-[250px]"
-        >
-          <PieChart>
-            <ChartTooltip
-              content={<ChartTooltipContent nameKey="visitors" hideLabel />}
-            />
-            <Pie data={chartData} dataKey="visitors">
-              <LabelList
-                dataKey="browser"
-                className="fill-background"
-                stroke="none"
-                fontSize={12}
-                formatter={(value: keyof typeof chartConfig) =>
-                  chartConfig[value]?.label
-                }
-              />
-            </Pie>
-          </PieChart>
-        </ChartContainer>
+    <text
+      x={x}
+      y={y}
+      fill="white"
+      textAnchor={x > cx ? "start" : "end"}
+      dominantBaseline="central"
+      fontSize={10}
+    >
+      {`${(percent * 100).toFixed(0)}%`}
+    </text>
+  );
+};
+
+const PostProgress = () => {
+  return (
+    <Card className="w-full p-6 h-[366px] grow ">
+      <CardContent className="flex justify-between items-center">
+        <div>
+          <h2 className="text-xl font-bold">Post</h2>
+          <p className="text-sm text-gray-700">
+            All post information is available here.
+          </p>
+        </div>
+
+        <div className="flex items-center space-x-4">
+          <ViewMore />
+          <MonthSwitcher />
+        </div>
       </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm">
-        <div className="flex items-center gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+
+      <hr className="mx-3" />
+
+      {/* Pie Chart and Data Legend */}
+      <CardContent className="flex items-center justify-around">
+        {/* Data Legend */}
+        <div className="flex flex-col gap-6">
+          {data.map((item) => (
+            <div key={item.name} className="flex items-center gap-8">
+              <span
+                className="w-4 h-4 rounded-full"
+                style={{ backgroundColor: item.color }}
+              ></span>
+              <p className="text-gray-600">{item.name}</p>
+              <span className="ml-auto text-sm font-medium">{item.value}</span>
+            </div>
+          ))}
         </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
+
+        {/* Pie Chart */}
+        <PieChart width={250} height={250}>
+          <Pie
+            data={data}
+            cx={125}
+            cy={125}
+            labelLine={false}
+            label={renderLabel}
+            outerRadius={100}
+            fill="#8884d8"
+            dataKey="value"
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Pie>
+        </PieChart>
+      </CardContent>
     </Card>
-  )
-}
+  );
+};
+
+export default PostProgress;

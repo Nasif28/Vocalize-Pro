@@ -13,20 +13,10 @@
   --foreground: #ededed;
 }
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a; 
-    --foreground: #ededed; 
-  }
-} */
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(
-    --font-be-vietnam-pro,
-    sans-serif
-  ); /* Make sure the variable is set or fallback to sans-serif */
+  font-family: var(--font-be-vietnam-pro, sans-serif);
 }
 
 @layer utilities {
@@ -34,7 +24,6 @@ body {
     text-wrap: balance;
   }
 }
-
 
 @layer base {
   :root {
@@ -92,7 +81,6 @@ body {
     --chart-5: 340 75% 55%;
   }
 }
-
 
 @layer base {
   * {

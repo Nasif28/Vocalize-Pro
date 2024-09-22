@@ -5,7 +5,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 import SessionWrapper from "./SessionWrapper";
 
 const beVietnamPro = Be_Vietnam_Pro({
-  weight: ["400", "500", "700"], // Specify the weights you need
+  weight: ["400", "500", "600", "700", "900"], 
   subsets: ["latin"], // Specify the subsets
   variable: "--font-be-vietnam-pro", // CSS variable to use the font globally
 });
