@@ -39,7 +39,7 @@ const CarouselItem = () => {
       </div>
 
       {/* Second column */}
-      <div className="pt-16">
+      <div className="md:pt-16">
         <Card
           logo="/solution/s3.png"
           title="Transcription Text"
@@ -53,7 +53,7 @@ const CarouselItem = () => {
       </div>
 
       {/* Third column */}
-      <div className="pt-32">
+      <div className="md:pt-32">
         <Card
           logo="/solution/s5.png"
           title="Facebook Post"
@@ -67,7 +67,7 @@ const CarouselItem = () => {
       </div>
 
       {/* Fourth column */}
-      <div className="pt-48">
+      <div className="md:pt-48">
         <Card
           logo="/solution/s7.png"
           title="LinkedIn Post"

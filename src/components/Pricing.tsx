@@ -158,25 +158,30 @@ const Pricing = () => {
   const [isYearly, setIsYearly] = useState(false);
 
   return (
-    <section 
-    id="pricing"
+    <section
+      id="pricing"
       style={{
         background:
           "linear-gradient(103.67deg, rgba(11, 79, 211, 0.05) 2.48%, rgba(255, 104, 0, 0.05) 100%)",
       }}
     >
-      <section className="myContainer">
+      <section className="myContainer relative">
+        <img
+          src="/s2.png"
+          alt="Icon 1"
+          className="absolute top-20 left-0 w-10 h-10 md:w-auto md:h-auto"
+        />
         {/* Title and Switch */}
         <div className="text-center mb-8 pt-28">
           <h2 className="text-5xl text-center font-bold  ">Our Pricing Plan</h2>
 
-          <p className="mt-4 text-xl   text-gray-600">
-            Affordable AI service for transforming audio and video <br /> into
+          <p className="my-6 text-xl   text-gray-600">
+            Affordable AI service for transforming audio and video <br className="hidden md:block" /> into
             various content formats.
           </p>
 
           {/* Switch Section */}
-          <div className="flex justify-center items-center mt-6 rounded-full shadow-md border  py-3  px-10 max-w-min mx-auto">
+          <div className="flex justify-center items-center mb-16 rounded-full shadow-md border  py-3  px-10 max-w-min mx-auto">
             <span
               className={` font-bold  ${
                 !isYearly ? "text-[#4A2BF1]" : "text-[#08212980]"
@@ -193,7 +198,7 @@ const Pricing = () => {
               }`}
             >
               <span
-                className={` inline-block w-7 h-7 transform bg-white rounded-full transition-transform ${
+                className={` inline-block w-6 h-6 transform bg-white rounded-full transition-transform ${
                   isYearly ? "translate-x-6 bg-[#4A2BF1]" : "-translate-x-1"
                 }`}
               />
@@ -210,7 +215,7 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8 pb-28">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-4 pb-28">
           {pricingPlans[isYearly ? "yearly" : "monthly"].map((plan, idx) => (
             <div
               key={idx}
@@ -220,25 +225,25 @@ const Pricing = () => {
                 {/* Blue background section for hover effect */}
                 {/* <div className="absolute inset-0 rounded-t-xl transform -translate-y-2 transition-all duration-300  group-hover:bg-blue-600"></div> */}
 
-                <div className="p-6 relative z-10">
+                <div className="pt-10 px-10 pb-5 relative ">
                   {plan.badge && (
                     <div className="relative">
-                      <div className="absolute top-5 -right-8 bg-orange-500 text-sm px-5 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg shadow-lg">
+                      <div className="absolute  top-5 -right-12 bg-orange-500 text-sm px-5 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg shadow-lg">
                         <div className="text-white text-sm">
                           {plan.badge}
                           {/* Rotated Triangle on bottom-right side */}
-                          <div className="-z-10 absolute  w-0 h-0 transform rotate-[135deg] border-l-8 border-l-transparent border-t-8 border-t-[#D15A00] border-r-8 border-r-transparent -bottom-1.5 right-0"></div>
+                          <div className="Triangle z-[-1] absolute  w-0 h-0 transform rotate-[135deg] border-l-8 border-l-transparent border-t-8 border-t-[#D15A00] border-r-8 border-r-transparent -bottom-1.5 right-0"></div>
                         </div>
                       </div>
                     </div>
                   )}
 
                   {/* Icon and Name */}
-                  <div className="flex flex-col items-start space-y-2">
-                    <div className="text-[#4A2BF1] text-3xl duration-300 group-hover:text-white">
+                  <div className="flex flex-col items-start space-y-2 ">
+                    <div className="text-[#4A2BF1] text-5xl duration-300 group-hover:text-white">
                       {plan.icon}
                     </div>
-                    <h3 className="text-xl font-bold text-gray-900 duration-300 group-hover:text-white">
+                    <h3 className="text-xl font-bold text-gray-900 duration-300 group-hover:text-white pt-2">
                       {plan.name}
                     </h3>
                   </div>
@@ -253,10 +258,10 @@ const Pricing = () => {
               </div>
               <div className="h-2 bg-[#4A2BF1] transition-colors duration-300 group-hover:bg-blue-600"></div>
 
-              <div className="p-6 px-8">
-                <ul className="mt-6 space-y-2 text-gray-600">
+              <div className="pb-6 px-10">
+                <ul className="mt-6 space-y-6 text-gray-600">
                   {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-center py-1">
+                    <li key={i} className="flex items-center">
                       <LuCheckCircle className="w-6 h-6 text-[#4A2BF1] mr-2 " />
                       {feature}
                     </li>

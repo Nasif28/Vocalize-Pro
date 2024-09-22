@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <section
-     id="contact"
+      id="contact"
       className="bg-[#120339] pt-32 relative"
       style={{ clipPath: "polygon(0 16%, 100% 0, 100% 100%, 0% 100%)" }}
     >
@@ -53,20 +53,21 @@ const Footer = () => {
         <img
           src="/footer/f6.png"
           alt="Icon 1"
-           className="absolute bottom-1/3 right-0"
+          className="absolute bottom-1/3 right-0"
         />
         <img
           src="/footer/f7.png"
           alt="Icon 1"
-           className="absolute bottom-1/3 right-12"
+          className="absolute bottom-1/3 right-12"
         />
       </div>
 
       <div className="myContainer relative">
         {/* Newsletter Section */}
         <div className="relative  container mx-auto  py-16 text-center">
-          <h2 className="text-5xl font-bold text-white py-4">
-            Get More Update! Subscribe <br /> newsletter
+          <h2 className="text-2xl md:text-5xl font-bold text-white py-4">
+            Get More Update! Subscribe <br className="hidden md:block" />{" "}
+            newsletter
           </h2>
           <p className="text-md text-[#FFFFFF99] mb-8">
             Join us today and experience the power of AI-powered <br />

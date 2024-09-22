@@ -8,7 +8,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { ChevronDownIcon } from "@radix-ui/react-icons";
+import { ChevronDown } from "lucide-react";
 
 export function LanguageSwitcher() {
   const [language, setLanguage] = React.useState<string>("English");
@@ -23,18 +23,18 @@ export function LanguageSwitcher() {
       <DropdownMenuTrigger asChild>
         <Button
           variant="ghost" // No border as requested
-          className="flex items-center space-x-1"
+          className="flex items-center space-x-2"
         >
           <span>{language}</span>
-          <ChevronDownIcon className="h-20px w-20px" />
+          <ChevronDown />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        align="start"
+        align="end"
         variant="ghost"
         // className=" bg-transparent shadow-none border-none"
       >
-        <DropdownMenuItem  onClick={() => handleLanguageChange("English")}>
+        <DropdownMenuItem onClick={() => handleLanguageChange("English")}>
           English
         </DropdownMenuItem>
         <DropdownMenuItem onClick={() => handleLanguageChange("বাংলা")}>

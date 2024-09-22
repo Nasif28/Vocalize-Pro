@@ -80,8 +80,9 @@ const Blogs = () => {
         <div className="text-center mb-12 mt-24">
           <h2 className="text-5xl font-bold mb-4">Latest Blog</h2>
           <p className="text-lg text-gray-600 mb-20">
-            Your one-stop solution for transforming audio and <br /> video into
-            a wide range of content formats.
+            Your one-stop solution for transforming audio and{" "}
+            <br className="hidden md:block" /> video into a wide range of
+            content formats.
           </p>
         </div>
 
@@ -151,6 +152,7 @@ const Blogs = () => {
                 </div>
 
                 {/* Title and Paragraph */}
+                <div className="text-center sm:text-left">
                 <h3
                   //   className="font-workSans"
                   style={{
@@ -175,6 +177,7 @@ const Blogs = () => {
                 >
                   {card.paragraph}
                 </p>
+                </div>
               </div>
             </div>
           ))}

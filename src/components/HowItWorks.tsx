@@ -3,25 +3,42 @@ import React from "react";
 const HowItWorks = () => {
   return (
     <section
-      className="maxContainer py-24 overflow-hidden"
+      className="maxContainer py-28 overflow-hidden relative"
       id="works"
       style={{
         background:
           "linear-gradient(134.17deg, rgba(25, 194, 221, 0.1) 1.77%, rgba(74, 43, 241, 0.1) 98.9%)",
       }}
     >
-      <div className="myContainer">
+      <div className="myContainer ">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold">How It Works</h2>
-          <p className="text-gray-500 mt-4">
-            Simple, easy to use interface. Import your media, generate a <br />
+          <h2 className="text-5xl font-bold">How It Works</h2>
+          <p className="text-md md:text-lg text-gray-700 mt-5">
+            Simple, easy to use interface. Import your media, generate a{" "}
+            <br className="hidden md:block" />
             content, and post all connected social media.
           </p>
         </div>
 
+        <img
+          src="/work/s3.png"
+          alt="Icon 1"
+          className="absolute top-10 right-20 w-10 h-10 md:w-auto md:h-auto"
+        />
+        <img
+          src="/work/s1.png"
+          alt="Icon 1"
+          className="absolute top-1/3 right-0 w-10 h-10 md:w-auto md:h-auto"
+        />
+        <img
+          src="/work/s2.png"
+          alt="Icon 1"
+          className="absolute bottom-1/2 left-12 w-10 h-10 md:w-auto md:h-auto"
+        />
+
         {/* First Row */}
-        <div className="flex flex-col md:flex-row items-center my-8 py-12 relative">
-          <div className="md:w-1/3">
+        <div className="flex flex-col md:flex-row items-center my-8 py-12 relative text-center md:text-left">
+          <div className="md:w-1/3 flex justify-center md:block mb-6 md:mb-0">
             <div className="relative p-4">
               <img
                 src="/work/wr1.png"
@@ -37,7 +54,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Number */}
-          <div className="md:w-1/3 flex justify-center">
+          <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
             <div
               className="flex items-center justify-center text-orange-400 text-[100px] font-bold leading-[126.5px]"
               style={{
@@ -50,9 +67,9 @@ const HowItWorks = () => {
           </div>
 
           {/* Text */}
-          <div className="md:w-1/3 text-left md:pl-8">
+          <div className="md:w-1/3  md:pl-8 ">
             <h3 className="text-3xl font-bold">Sign Up/Registration</h3>
-            <p className="text-gray-500 mt-4 pr-20">
+            <p className="text-gray-500 mt-4 md:pr-20">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum. Etaque
               molestias enim quo harum ex, inventore eos corporis temporibus
@@ -73,12 +90,14 @@ const HowItWorks = () => {
           />
         </div>
 
+        <div className="py-10  md:py-0"></div>
+
         {/* Second Row */}
-        <div className="flex flex-col md:flex-row items-center my-8 relative">
+        <div className="flex flex-col md:flex-row items-center my-8 relative text-center md:text-left">
           {/* Text */}
-          <div className="md:w-1/3 text-left md:pl-8">
+          <div className="md:w-1/3 md:pl-8 mb-6 md:mb-0">
             <h3 className="text-3xl font-bold">Account Verification</h3>
-            <p className="text-gray-500 mt-4 pr-20">
+            <p className="text-gray-500 mt-4 pr-0 md:pr-20">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum. Etaque
               molestias enim quo harum ex, inventore eos corporis temporibus
@@ -87,7 +106,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Number */}
-          <div className="md:w-1/3 flex justify-center">
+          <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
             <div
               className="flex items-center justify-center text-orange-400 text-[100px] font-bold leading-[126.5px]"
               style={{
@@ -100,7 +119,7 @@ const HowItWorks = () => {
           </div>
 
           {/* Image  */}
-          <div className="md:w-1/3">
+          <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
               <img
                 src="/work/wr2.png"
@@ -128,9 +147,11 @@ const HowItWorks = () => {
           />
         </div>
 
+        <div className="py-10  md:py-0"></div>
+
         {/* Third Row */}
-        <div className="flex flex-col md:flex-row items-center my-8 py-16 relative">
-          <div className="md:w-1/3">
+        <div className="flex flex-col md:flex-row items-center my-8 py-12 relative text-center md:text-left">
+          <div className="md:w-1/3 flex justify-center md:block mb-6 md:mb-0">
             <div className="relative p-4">
               <img
                 src="/work/wr3.png"
@@ -145,7 +166,7 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          <div className="md:w-1/3 flex justify-center">
+          <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
             <div
               className="flex items-center justify-center text-orange-400 text-[100px] font-bold leading-[126.5px]"
               style={{
@@ -158,9 +179,9 @@ const HowItWorks = () => {
           </div>
 
           {/* Text */}
-          <div className="md:w-1/3 text-left md:pl-8">
+          <div className="md:w-1/3 md:pl-8">
             <h3 className="text-3xl font-bold">Upload Audio/Video or Record</h3>
-            <p className="text-gray-500 mt-4 pr-20">
+            <p className="text-gray-500 mt-4 pr-0 md:pr-20">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum. Etaque
               molestias enim quo harum ex, inventore eos corporis temporibus
@@ -181,12 +202,14 @@ const HowItWorks = () => {
           />
         </div>
 
+        <div className="py-10  md:py-0"></div>
+
         {/* Fourth Row */}
-        <div className="flex flex-col md:flex-row items-center my-8 relative">
+        <div className="flex flex-col md:flex-row items-center my-8 relative text-center md:text-left">
           {/* Text */}
-          <div className="md:w-1/3 text-left md:pl-8">
+          <div className="md:w-1/3 md:pl-8 mb-6 md:mb-0">
             <h3 className="text-3xl font-bold">Generate Content</h3>
-            <p className="text-gray-500 mt-4 pr-20">
+            <p className="text-gray-500 mt-4 pr-0 md:pr-20">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum. Etaque
               molestias enim quo harum ex, inventore eos corporis temporibus
@@ -194,7 +217,7 @@ const HowItWorks = () => {
             </p>
           </div>
 
-          <div className="md:w-1/3 flex justify-center">
+          <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
             <div
               className="flex items-center justify-center text-orange-400 text-[100px] font-bold leading-[126.5px]"
               style={{
@@ -206,7 +229,7 @@ const HowItWorks = () => {
             </div>
           </div>
           {/* Image  */}
-          <div className="md:w-1/3">
+          <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
               <img
                 src="/work/wr4.png"
@@ -234,9 +257,11 @@ const HowItWorks = () => {
           />
         </div>
 
+        <div className="py-10  md:py-0"></div>
+
         {/* Fifth Row */}
-        <div className="flex flex-col md:flex-row items-center my-8 py-12 relative">
-          <div className="md:w-1/3">
+        <div className="flex flex-col md:flex-row items-center my-8 py-12 relative text-center md:text-left">
+          <div className="md:w-1/3 flex justify-center md:block mb-6 md:mb-0">
             <div className="relative p-4">
               <img
                 src="/work/wr5.png"
@@ -251,7 +276,7 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          <div className="md:w-1/3 flex justify-center">
+          <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
             <div
               className="flex items-center justify-center text-orange-400 text-[100px] font-bold leading-[126.5px]"
               style={{
@@ -264,9 +289,9 @@ const HowItWorks = () => {
           </div>
 
           {/* Text */}
-          <div className="md:w-1/3 text-left md:pl-8">
+          <div className="md:w-1/3 md:pl-8">
             <h3 className="text-3xl font-bold">Connect Social Media</h3>
-            <p className="text-gray-500 mt-4 pr-20">
+            <p className="text-gray-500 mt-4 pr-0 md:pr-20">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum. Etaque
               molestias enim quo harum ex, inventore eos corporis temporibus
@@ -287,12 +312,14 @@ const HowItWorks = () => {
           />
         </div>
 
+        <div className="py-10  md:py-0"></div>
+
         {/* Sixth Row */}
-        <div className="flex flex-col md:flex-row items-center my-8 relative">
+        <div className="flex flex-col md:flex-row items-center my-8 relative text-center md:text-left">
           {/* Text */}
-          <div className="md:w-1/3 text-left md:pl-8">
+          <div className="md:w-1/3 md:pl-8 mb-6 md:mb-0">
             <h3 className="text-3xl font-bold">Post</h3>
-            <p className="text-gray-500 mt-4 pr-20">
+            <p className="text-gray-500 mt-4 pr-0 md:pr-20">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum. Etaque
               molestias enim quo harum ex, inventore eos corporis temporibus
@@ -300,7 +327,7 @@ const HowItWorks = () => {
             </p>
           </div>
 
-          <div className="md:w-1/3 flex justify-center">
+          <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
             <div
               className="flex items-center justify-center text-orange-400 text-[100px] font-bold leading-[126.5px]"
               style={{
@@ -312,7 +339,7 @@ const HowItWorks = () => {
             </div>
           </div>
           {/* Image  */}
-          <div className="md:w-1/3">
+          <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
               <img
                 src="/work/wr6.png"
@@ -340,9 +367,11 @@ const HowItWorks = () => {
           />
         </div>
 
+        <div className="py-10  md:py-0"></div>
+
         {/* Seventh Row */}
-        <div className="flex flex-col md:flex-row items-center my-8 py-10 relative">
-          <div className="md:w-1/3">
+        <div className="flex flex-col md:flex-row items-center my-8 py-12 relative text-center md:text-left">
+          <div className="md:w-1/3 flex justify-center md:block mb-6 md:mb-0">
             <div className="relative p-4">
               <img
                 src="/work/wr7.png"
@@ -357,7 +386,7 @@ const HowItWorks = () => {
             </div>
           </div>
 
-          <div className="md:w-1/3 flex justify-center">
+          <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
             <div
               className="flex items-center justify-center text-orange-400 text-[100px] font-bold leading-[126.5px]"
               style={{
@@ -370,9 +399,9 @@ const HowItWorks = () => {
           </div>
 
           {/* Text */}
-          <div className="md:w-1/3 text-left md:pl-8">
+          <div className="md:w-1/3 md:pl-8">
             <h3 className="text-3xl font-bold">Manage Posts</h3>
-            <p className="text-gray-500 mt-4 pr-20">
+            <p className="text-gray-500 mt-4 pr-0 md:pr-20">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum. Etaque
               molestias enim quo harum ex, inventore eos corporis temporibus
@@ -393,12 +422,14 @@ const HowItWorks = () => {
           />
         </div>
 
+        <div className="py-10  md:py-0"></div>
+
         {/* Eight Row */}
-        <div className="flex flex-col md:flex-row items-center my-8 relative">
+        <div className="flex flex-col md:flex-row items-center my-8 relative text-center md:text-left">
           {/* Text */}
-          <div className="md:w-1/3 text-left md:pl-8">
+          <div className="md:w-1/3 md:pl-8 mb-6 md:mb-0">
             <h3 className="text-3xl font-bold">One Hub for All Your Posts</h3>
-            <p className="text-gray-500 mt-4 pr-20">
+            <p className="text-gray-500 mt-4 pr-0 md:pr-20">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum. Etaque
               molestias enim quo harum ex, inventore eos corporis temporibus
@@ -406,7 +437,7 @@ const HowItWorks = () => {
             </p>
           </div>
 
-          <div className="md:w-1/3 flex justify-center">
+          <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
             <div
               className="flex items-center justify-center text-orange-400 text-[100px] font-bold leading-[126.5px]"
               style={{
@@ -418,7 +449,7 @@ const HowItWorks = () => {
             </div>
           </div>
           {/* Image  */}
-          <div className="md:w-1/3">
+          <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
               <img
                 src="/work/wr8.png"

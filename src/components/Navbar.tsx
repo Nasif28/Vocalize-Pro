@@ -7,8 +7,9 @@ import { LanguageSwitcher } from "./language-switcher";
 import { NavMenu } from "./NavMenu";
 import Account from "./Account";
 import { useSession, signIn } from "next-auth/react";
-import { Menu } from "lucide-react"; // Hamburger Icon
+import { CircleUser, Menu } from "lucide-react"; // Hamburger Icon
 import { RiMenu3Fill } from "react-icons/ri";
+import { GoPersonAdd } from "react-icons/go";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"; // Import Sheet components
 
 export default function Navbar() {
@@ -20,8 +21,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full shadow-sm">
-      <nav className="myContainer mx-auto flex items-center justify-between px-4 pt-4 md:px-8">
+    <header className="w-full ">
+      <nav className="myContainer mx-auto flex  items-center justify-between px-4 pt-4 md:px-8">
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center space-x-2">
@@ -36,7 +37,7 @@ export default function Navbar() {
         </div>
 
         {/* Right Side - Login, Signup, Language, Theme (visible for xl and larger) */}
-        <div className="hidden xl:flex items-center space-x-4">
+        <div className="hidden xl:flex items-center space-x-1">
           {/* Language Switcher */}
           <LanguageSwitcher />
 
@@ -47,13 +48,31 @@ export default function Navbar() {
             <Account />
           ) : (
             <>
+              {/* <Link href="/auth" passHref>
+                <Button variant="ghost">
+                  <CircleUser className="h-5 w-5 mr-2" />
+                  Login
+                </Button>
+              </Link> */}
+              {/* Sign Up Button */}
+              {/* <Link href="/auth" passHref>
+                <Button
+                  className="hidden md:inline-flex items-center justify-center rounded-2xl p-[22px_28px] text-[rgba(74,43,241,1)]"
+                  variant="secondary"
+                >
+                  <GoPersonAdd className="h-5 w-5 mr-2" />
+                  Sign Up
+                </Button>
+              </Link> */}
               <Button variant="ghost" onClick={() => signIn()}>
+                <CircleUser className="h-4 w-4 mr-1" />
                 Login
               </Button>
               <Button
-                className="inline-flex items-center justify-center rounded-2xl p-[22px_28px] text-[rgba(74,43,241,1)]"
+                className="font-bold rounded-2xl p-[22px_28px] text-[rgba(74,43,241,1)]"
                 variant="secondary"
               >
+                <GoPersonAdd className="h-5 w-5 mr-2" />
                 Sign Up
               </Button>
             </>

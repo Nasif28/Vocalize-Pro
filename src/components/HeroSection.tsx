@@ -22,7 +22,7 @@ export default function HeroSection() {
         <img
           src="/Ornament2.png"
           alt="Icon 2"
-          className="absolute top-44 right-24 w-10 h-10 md:w-auto md:h-auto"
+          className="absolute top-44 right-24 w-10 h-10 hidden sm:block"
         />
         <img
           src="/Ornament3.png"
@@ -54,7 +54,7 @@ export default function HeroSection() {
       {/* Main Content */}
       <div className="myContainer p-4 flex flex-col md:flex-row items-center  ">
         {/* Left Side (Text Section) */}
-        <div className="md:w-1/2 text-center md:text-left">
+        <div className="md:w-1/2 text-center  md:text-left">
           {/* Headline */}
           <h1 className="py-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight lg:leading-[75px]">
             Super easy to{" "}
@@ -71,7 +71,7 @@ export default function HeroSection() {
           </h1>
 
           {/* Description */}
-          <p className="mt-4 md:mt-6 text-sm md:text-base lg:text-lg leading-relaxed md:leading-normal lg:leading-[30px] md:pr-12 lg:pr-20">
+          <p className="mt-4 md:mt-6 text-sm md:text-base lg:text-lg  md:pr-12 lg:pr-32">
             AI that converts audio or video into transcripts, clips, show notes,
             articles, summaries, titles, newsletters, social media posts,
             midroll ads, intro scripts, and much more.
@@ -80,13 +80,14 @@ export default function HeroSection() {
           {/* Call to Action */}
           <div className="mt-6 md:mt-8 md:items-center">
             <Button
-              className=" flex items-center justify-center px-6 py-4 md:px-6 md:py-5 md:mb-5 font-semibold text-white rounded-md"
+              className="flex items-center justify-center px-6 py-6 md:mb-5 font-semibold text-white rounded-xl mx-auto md:mx-0"
               style={{
                 background:
                   "linear-gradient(117.62deg, #FBCDBA -18.06%, #FC5D19 50.99%)",
+                boxShadow: "0px 6px 10px 0px #FC5D193B",
               }}
             >
-              Free for 7 Days{" "}
+              Free for 7 Days
               <LuArrowRightCircle className="ml-2 w-5 h-5 md:w-6 md:h-6" />
             </Button>
           </div>
@@ -98,13 +99,13 @@ export default function HeroSection() {
           <img
             src="/heroellipse.png"
             alt="Background Design"
-            className="absolute inset-0 w-3/4 md:w-auto max-h-full" // Adjust size for responsiveness
+            className="absolute w-3/4 md:w-auto z-10 max-h-full" // Adjust size for responsiveness
           />
           {/* Foreground Image */}
           <img
             src="/hero.png"
             alt="Transcription Service"
-            className="relative w-3/4 md:w-auto z-10 max-h-full" // Adjust size for responsiveness
+            className="relative w-3/4 md:w-auto z-20 max-h-full" // Adjust size for responsiveness
           />
           <img
             src="/Ornament8.png"

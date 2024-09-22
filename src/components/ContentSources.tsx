@@ -1,17 +1,10 @@
 "use client";
 import React, { useState } from "react";
-import CarouselItem from "./CarouselItem";
+import Content from "./Content";
 
-const carouselItems = [
-  // "Slide 1: Lorem ipsum dolor sit amet.",
-  // "Slide 2: Consectetur adipiscing elit.",
-  // "Slide 3: Integer nec odio. Praesent libero.",
-  <CarouselItem />,
-  <CarouselItem />,
-  <CarouselItem />,
-];
+const carouselItems = [<Content />, <Content />, <Content />];
 
-const Solution = () => {
+const ContentSources = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const nextSlide = () => {
@@ -29,16 +22,32 @@ const Solution = () => {
   return (
     <section
       id="about"
-      className="relative w-full h-full bg-cover bg-center py-10"
-      style={{ backgroundImage: 'url("/solution/bg.png")' }}
+      className="relative w-full h-full bg-cover bg-center py-14"
+      style={{
+        background:
+          "linear-gradient(134.17deg, rgba(25, 194, 221, 0.1) 1.77%, rgba(74, 43, 241, 0.1) 98.9%)",
+      }}
     >
-      {/* Blue transparent overlay */}
-      <div className="absolute inset-0 bg-blue-700 bg-opacity-85"></div>
+      <img
+        src="/content/r1.png"
+        alt="Icon 1"
+        className="absolute top-0 right-0 w-10 h-10 md:w-auto md:h-auto"
+      />
+      <img
+        src="/content/r2.png"
+        alt="Icon 1"
+        className="absolute top-32 right-0 w-10 h-10 md:w-auto md:h-auto"
+      />
+      <img
+        src="/content/r3.png"
+        alt="Icon 1"
+        className="absolute top-16 right-0 w-10 h-10 md:w-auto md:h-auto"
+      />
 
       {/* Content */}
-      <div className="relative z-10 py-12 px-6 text-center text-white">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-4">One Stop Solution</h1>
-        <p className="text-lg mb-12">
+      <div className="relative z-10 py-12 px-6 text-center">
+        <h1 className="text-5xl font-bold mb-4">Content Sources</h1>
+        <p className="text-lg mb-6">
           Your one-stop solution for transforming audio and <br className="hidden md:block" /> video into a
           wide range of content formats.
         </p>
@@ -60,7 +69,7 @@ const Solution = () => {
             </div>
           </div>
 
-          <div className="absolute inset-x-0 bottom-0 flex justify-center py-2">
+          <div className="absolute inset-x-0 bottom-0 flex justify-center ">
             <div className="flex space-x-8">
               {carouselItems.map((_, index) => (
                 <div
@@ -71,8 +80,8 @@ const Solution = () => {
                     height: "20px",
                     backgroundColor:
                       currentIndex === index
-                        ? "rgba(255, 255, 255, 1)"
-                        : "rgba(255, 255, 255, 0.5)", // White when active, 50% transparent white when inactive
+                        ? "rgba(74, 43, 241, 1)"
+                        : "rgba(74, 43, 241, 0.2)",
                   }}
                   onClick={() => setCurrentIndex(index)}
                 />
@@ -84,5 +93,4 @@ const Solution = () => {
     </section>
   );
 };
-
-export default Solution;
+export default ContentSources;

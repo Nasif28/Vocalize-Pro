@@ -4,18 +4,21 @@ import { Button } from "./ui/button";
 
 const Manage = () => {
   return (
-    <section  id="schedule" className="relative py-12 lg:py-28 flex items-center justify-center">
+    <section
+      id="schedule"
+      className="relative py-12 lg:py-28 flex items-center justify-center"
+    >
       {/* Decorative Images */}
       <div className="absolute inset-0 pointer-events-none hidden lg:block">
         <img
           src="/manage/eli.png"
           alt="Icon 1"
-          className="absolute bottom-1/2 left-0 transform translate-y-1/2 w-[650px] pointer-events-none"
+          className="absolute bottom-1/2 left-0 transform translate-y-1/2 w-full pointer-events-none"
         />
         <img
           src="/manage/elips.png"
           alt="Icon 2"
-          className="absolute top-1/2 right-0 transform -translate-y-1/2 w-[350px] pointer-events-none"
+          className="absolute top-1/2 right-0 transform -translate-y-1/2 w-[400px] pointer-events-none"
         />
       </div>
 
@@ -23,15 +26,15 @@ const Manage = () => {
         {/* Text Section */}
         <div>
           <h3 className="text-[40px] lg:text-[55px] leading-[48px] lg:leading-[63px] font-bold mb-4 pr-0 lg:pr-4">
-            Effortlessly manage all your podcasts from a single dashboard.
+            Effortlessly Manage All Your Podcasts From A Single Dashboard.
           </h3>
-          <p className="text-[18px] lg:text-[20px] leading-[28px] lg:leading-[30px] text-gray-600 mb-4 max-w-xl mx-auto lg:mx-0">
+          <p className="text-[18px] lg:text-[20px] leading-[28px] lg:leading-[30px] text-gray-900 mb-4 max-w-xl mx-auto lg:mx-0">
             Etaque molestias enim quo harum ex, inventore eos corporis
             temporibus sint reiciendis nemo similique consequuntur eum. Etaque
             molestias enim quo harum ex, inventore eos corporis temporibus sint
             reiciendis nemo similique consequuntur eum.
           </p>
-          <p className="text-[18px] lg:text-[20px] leading-[28px] lg:leading-[30px] text-gray-600 mb-6 max-w-xl mx-auto lg:mx-0">
+          <p className="text-[18px] lg:text-[20px] leading-[28px] lg:leading-[30px] text-gray-900 mb-6 max-w-xl mx-auto lg:mx-0">
             Etaque molestias enim quo harum ex, inventore eos corporis
             temporibus sint reiciendis nemo similique consequuntur eum. Etaque
             molestias enim quo harum ex, inventore eos corporis temporibus sint
