@@ -1,6 +1,6 @@
 import React from "react";
 import { LuArrowRightCircle } from "react-icons/lu";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 const Manage = () => {
   return (

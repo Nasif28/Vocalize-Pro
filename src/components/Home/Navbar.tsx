@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ThemeSwitcher } from "./theme-switcher";
-import { LanguageSwitcher } from "./language-switcher";
-import { NavMenu } from "./NavMenu";
-import Account from "./Account";
+import { ThemeSwitcher } from "../theme-switcher";
+import { LanguageSwitcher } from "../language-switcher";
+import { NavMenu } from "../NavMenu";
+import Account from "../Account";
 import { useSession, signIn } from "next-auth/react";
 import { CircleUser, Menu } from "lucide-react"; // Hamburger Icon
 import { RiMenu3Fill } from "react-icons/ri";

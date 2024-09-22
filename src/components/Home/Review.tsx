@@ -50,7 +50,6 @@ const testimonials = [
       "The results speak for themselves! This product has taken our operations to a new level, streamlining tasks and freeing up time for more strategic work. I wouldn’t hesitate to recommend it to anyone looking for a reliable, efficient solution!",
     image: "/review/p6.png",
   },
-  // Add more testimonials as needed
 ];
 
 const Review = () => {
@@ -81,61 +80,86 @@ const Review = () => {
           </div>
 
           {/* Floating Avatars */}
-          <div className="overflow-hidden">
-            {/* Left side avatars */}
-            {testimonials.slice(0, 3).map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className={`absolute rounded-full w-32 h-32 bg-white p-2 cursor-pointer transform transition-all duration-500 ease-in-out ${
-                  activeTestimonial.id === testimonial.id
-                    ? "scale-125 border-4 border-[#4A2BF1]"
-                    : "scale-100"
-                }`}
-                style={{
-                  bottom: `${(index + 1) * 190}px`, // Vertically spaced
-                  left: `${index % 2 === 0 ? "50px" : "250px"}`, // Alternates between left and right for each avatar
-                }}
-                onClick={() => setActiveTestimonial(testimonial)}
-              >
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="rounded-full object-cover w-full h-full"
-                />
-              </div>
-            ))}
+          <div className="overflow-hidden py-5">
+            {/* Left side avatars for big screens */}
+            <div className="hidden xl:block">
+              {testimonials.slice(0, 3).map((testimonial, index) => (
+                <div
+                  key={testimonial.id}
+                  className={`absolute rounded-full w-32 h-32 bg-white p-2 cursor-pointer transform transition-all duration-500 ease-in-out ${
+                    activeTestimonial.id === testimonial.id
+                      ? "scale-125 border-4 border-[#4A2BF1]"
+                      : "scale-100"
+                  }`}
+                  style={{
+                    bottom: `${(index + 1) * 190}px`, // Vertically spaced
+                    left: `${index % 2 === 0 ? "50px" : "250px"}`, // Alternates between left and right for each avatar
+                  }}
+                  onClick={() => setActiveTestimonial(testimonial)}
+                >
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="rounded-full object-cover w-full h-full"
+                  />
+                </div>
+              ))}
+            </div>
 
-            {/* Right side avatars */}
-            {testimonials.slice(3).map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className={`absolute rounded-full w-32 h-32 bg-white p-2 cursor-pointer transform transition-all duration-500 ease-in-out ${
-                  activeTestimonial.id === testimonial.id
-                    ? "scale-125 border-4 border-[#4A2BF1]"
-                    : "scale-100"
-                }`}
-                style={{
-                  bottom: `${(index + 1) * 190}px`, // Vertically spaced
-                  right: `${index % 2 === 0 ? "50px" : "250px"}`, // Alternates between left and right for each avatar
-                }}
-                onClick={() => setActiveTestimonial(testimonial)}
-              >
-                <img
-                  src={testimonial.image}
-                  alt={testimonial.name}
-                  className="rounded-full object-cover w-full h-full"
-                />
-              </div>
-            ))}
+            {/* Right side avatars for big screens */}
+            <div className="hidden xl:block">
+              {testimonials.slice(3).map((testimonial, index) => (
+                <div
+                  key={testimonial.id}
+                  className={`absolute rounded-full w-32 h-32 bg-white p-2 cursor-pointer transform transition-all duration-500 ease-in-out ${
+                    activeTestimonial.id === testimonial.id
+                      ? "scale-125 border-4 border-[#4A2BF1]"
+                      : "scale-100"
+                  }`}
+                  style={{
+                    bottom: `${(index + 1) * 190}px`, // Vertically spaced
+                    right: `${index % 2 === 0 ? "50px" : "250px"}`, // Alternates between left and right for each avatar
+                  }}
+                  onClick={() => setActiveTestimonial(testimonial)}
+                >
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="rounded-full object-cover w-full h-full"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Responsive avatars for smaller screens */}
+            <div className="xl:hidden flex justify-center gap-4 flex-wrap">
+              {testimonials.map((testimonial) => (
+                <div
+                  key={testimonial.id}
+                  className={`rounded-full w-24 h-24 bg-white p-2 cursor-pointer transform transition-all duration-500 ease-in-out ${
+                    activeTestimonial.id === testimonial.id
+                      ? "scale-110 border-4 border-[#4A2BF1]"
+                      : "scale-100"
+                  }`}
+                  onClick={() => setActiveTestimonial(testimonial)}
+                >
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="rounded-full object-cover w-full h-full"
+                  />
+                </div>
+              ))}
+            </div>
 
             {/* Active Testimonial */}
             <div className="my-12 text-center">
               <img
                 src="/review/pd2.png"
                 alt={activeTestimonial.name}
-                className=" mx-auto w-20 h-14 my-10"
+                className="mx-auto w-20 h-14 my-10"
               />
-              <div className="w-72 h-72 mx-auto my-8 rounded-full overflow-hidden ">
+              <div className="w-72 h-72 mx-auto my-8 rounded-full overflow-hidden">
                 <img
                   src={activeTestimonial.image}
                   alt={activeTestimonial.name}

@@ -1,7 +1,7 @@
 import React from "react";
 import { LuArrowRightCircle } from "react-icons/lu";
 import Navbar from "./Navbar";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 export default function HeroSection() {
   return (

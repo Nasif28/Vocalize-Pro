@@ -3,7 +3,7 @@ import { IoMdHeartEmpty } from "react-icons/io";
 import { FiShare2 } from "react-icons/fi";
 import { FaRegComments } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
-import { Avatar, AvatarImage } from "./ui/avatar";
+import { Avatar, AvatarImage } from "../ui/avatar";
 
 const cards = [
   {
