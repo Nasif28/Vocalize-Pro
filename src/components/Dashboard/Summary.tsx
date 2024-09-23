@@ -1,129 +1,90 @@
-"use client"
+"use client";
+import * as React from "react";
+import { RadialBarChart, RadialBar, PolarAngleAxis } from "recharts";
+import { Card, CardContent } from "@/components/ui/card";
+import ViewMore from "../ViewMore";
 
-import * as React from "react"
-import { TrendingUp } from "lucide-react"
-import { Label, Pie, PieChart } from "recharts"
+const Summary = () => {
+  const data = [
+    {
+      name: "Used Words",
+      value: 100,
+      fill: "#3457FF", // Blue color (main)
+    },
+  ];
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart"
-
-export const description = "A donut chart with text"
-
-const chartData = [
-  { browser: "chrome", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "safari", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "firefox", visitors: 287, fill: "var(--color-firefox)" },
-  { browser: "edge", visitors: 173, fill: "var(--color-edge)" },
-  { browser: "other", visitors: 190, fill: "var(--color-other)" },
-]
-
-const chartConfig = {
-  visitors: {
-    label: "Visitors",
-  },
-  chrome: {
-    label: "Chrome",
-    color: "hsl(var(--chart-1))",
-  },
-  safari: {
-    label: "Safari",
-    color: "hsl(var(--chart-2))",
-  },
-  firefox: {
-    label: "Firefox",
-    color: "hsl(var(--chart-3))",
-  },
-  edge: {
-    label: "Edge",
-    color: "hsl(var(--chart-4))",
-  },
-  other: {
-    label: "Other",
-    color: "hsl(var(--chart-5))",
-  },
-} satisfies ChartConfig
-
-export default function Component() {
-  const totalVisitors = React.useMemo(() => {
-    return chartData.reduce((acc, curr) => acc + curr.visitors, 0)
-  }, [])
+  const totalWords = 1000;
+  const usedWords = 578;
+  const percentageUsed = (usedWords / totalWords) * 100;
 
   return (
-    <Card className="flex flex-col w-full border-none shadow-none">
-      <CardHeader className="items-center pb-0">
-        <CardTitle>Pie Chart - Donut with Text</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
-      </CardHeader>
-      <CardContent className="flex-1 pb-0">
-        <ChartContainer
-          config={chartConfig}
-          className="mx-auto aspect-square max-h-[250px]"
-        >
-          <PieChart>
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent hideLabel />}
-            />
-            <Pie
-              data={chartData}
-              dataKey="visitors"
-              nameKey="browser"
-              innerRadius={60}
-              strokeWidth={5}
-            >
-              <Label
-                content={({ viewBox }) => {
-                  if (viewBox && "cx" in viewBox && "cy" in viewBox) {
-                    return (
-                      <text
-                        x={viewBox.cx}
-                        y={viewBox.cy}
-                        textAnchor="middle"
-                        dominantBaseline="middle"
-                      >
-                        <tspan
-                          x={viewBox.cx}
-                          y={viewBox.cy}
-                          className="fill-foreground text-3xl font-bold"
-                        >
-                          {totalVisitors.toLocaleString()}
-                        </tspan>
-                        <tspan
-                          x={viewBox.cx}
-                          y={(viewBox.cy || 0) + 24}
-                          className="fill-muted-foreground"
-                        >
-                          Visitors
-                        </tspan>
-                      </text>
-                    )
-                  }
-                }}
-              />
-            </Pie>
-          </PieChart>
-        </ChartContainer>
+    <Card className="h-auto w-full p-6 rounded-md ">
+      <CardContent className="flex flex-col lg:flex-row items-center  gap-4 lex justify-between">
+        <div className="text-center lg:text-start">
+          <h2 className="text-xl font-bold">Summary</h2>
+          <p className="text-sm text-gray-700">
+            You can see the words used and remaining here.
+          </p>
+        </div>
+        <ViewMore />
       </CardContent>
-      <CardFooter className="flex-col gap-2 text-sm">
-        <div className="flex items-center gap-2 font-medium leading-none">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
+
+      <hr className="mx-3" />
+
+      <CardContent className="flex items-center justify-around p-2">
+        {/* Radial Bar Chart */}
+        <RadialBarChart
+          width={270}
+          height={270}
+          innerRadius="80%"
+          outerRadius="80%"
+          data={data}
+          startAngle={90}
+          endAngle={450}
+          barSize={40}
+        >
+          <PolarAngleAxis
+            type="number"
+            domain={[0, 100]}
+            dataKey="value"
+            tick={false}
+          />
+          <RadialBar
+            background
+            dataKey="value"
+            cornerRadius={10}
+            fill="#3457FF"
+            clockWise
+          />
+          <text
+            x="50%"
+            y="50%"
+            textAnchor="middle"
+            dominantBaseline="middle"
+            className="font-bold text-3xl fill-current text-blue-600"
+          >
+            {`${percentageUsed.toFixed(0)}%`}
+          </text>
+        </RadialBarChart>
+
+        {/* Legend and Data */}
+        <div className="flex flex-col gap-8">
+          <div className="flex flex-col justify-between text-gray-600">
+            <p>Free transcribe</p>
+            <span className=" text-2xl font-semibold text-gray-900">
+              {totalWords} <span className="text-sm">(Words)</span>
+            </span>
+          </div>
+          <div className="flex flex-col justify-between text-gray-600">
+            <p>Used so far</p>
+            <span className=" text-2xl font-semibold text-blue-600">
+              {usedWords} <span className="text-sm text-gray-600">(Words)</span>
+            </span>
+          </div>
         </div>
-        <div className="leading-none text-muted-foreground">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
+      </CardContent>
     </Card>
-  )
-}
+  );
+};
+
+export default Summary;

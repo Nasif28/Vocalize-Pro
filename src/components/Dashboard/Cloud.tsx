@@ -2,14 +2,11 @@
 import * as React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ChevronDownIcon } from "lucide-react";
-import { MonthSwitcher } from "../month-switcher";
 import ViewMore from "../ViewMore";
 
 const data = [
-  { name: "Storage Full", value: 80, color: "#FFA500" }, // Blue
-  { name: "Storage Empty", value: 20, color: "#00C49F" }, // Orange
+  { name: "Storage Full", value: 80, color: "#FFA500" }, // Orange
+  { name: "Storage Empty", value: 20, color: "#00C49F" }, // Green
 ];
 
 const RADIAN = Math.PI / 180;
@@ -42,30 +39,28 @@ const renderLabel = ({
 
 const Cloud = () => {
   return (
-    <Card className="w-full p-6 h-[318px] grow ">
-      <CardContent className="flex justify-between items-center">
-        <div>
+    <Card className="h-auto w-full p-6 rounded-md ">
+      <CardContent className="flex flex-col lg:flex-row items-center  gap-4 lex justify-between">
+        <div className="text-center lg:text-start">
           <h2 className="text-xl font-bold">Cloud Storage</h2>
-          <p className="text-sm text-gray-700 py-2">
-            From here you can see all Full and empty cloud storage info
+          <p className="text-sm text-gray-700">
+            From here you can see all full and empty cloud storage info
           </p>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <ViewMore />
-        </div>
+        <ViewMore />
       </CardContent>
 
       <hr className="mx-3" />
 
       {/* Pie Chart and Data Legend */}
-      <CardContent className="flex items-center justify-around">
+      <CardContent className="flex flex-col lg:flex-row items-center justify-around gap-6">
         {/* Pie Chart */}
-        <PieChart width={200} height={200}>
+        <PieChart width={180} height={180}>
           <Pie
             data={data}
-            cx={100}
-            cy={100}
+            cx={90}
+            cy={90}
             labelLine={false}
             label={renderLabel}
             outerRadius={80}
@@ -79,15 +74,17 @@ const Cloud = () => {
         </PieChart>
 
         {/* Data Legend */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-4">
           {data.map((item) => (
-            <div key={item.name} className="flex items-center gap-10">
+            <div key={item.name} className="flex items-center gap-5">
               <span
                 className="w-4 h-4 rounded-full"
                 style={{ backgroundColor: item.color }}
               ></span>
-              <p className="text-gray-600">{item.name}</p>
-              <span className="ml-auto text-sm font-medium">{item.value}%</span>
+              <p className="text-gray-600 text-sm lg:text-base">{item.name}</p>
+              <span className="ml-auto text-sm lg:text-base font-medium">
+                {item.value}%
+              </span>
             </div>
           ))}
         </div>

@@ -29,9 +29,9 @@ const Progress = () => {
   ];
 
   return (
-    <Card className="h-[366px]  w-full p-6 rounded-md grow ">
-      <CardContent className="flex justify-between items-center">
-        <div>
+    <Card className="h-auto w-full p-6 rounded-md ">
+      <CardContent className="flex flex-col lg:flex-row items-center  gap-4 lex justify-between">
+        <div className="text-center lg:text-start">
           <h2 className="text-xl font-bold">Overall Progress</h2>
           <p className="text-sm text-gray-700">
             From here you can see your overall progress
@@ -40,30 +40,31 @@ const Progress = () => {
         <MonthSwitcher />
       </CardContent>
 
-      {/* <Separator className="mx-10" /> */}
       <hr className="mx-3" />
 
-      <CardContent className="flex items-center justify-around ">
+      <CardContent className="flex flex-col lg:flex-row items-center justify-around gap-8">
         {/* Radial Bar Chart */}
-        <RadialBarChart
-          width={270}
-          height={270}
-          innerRadius="20%"
-          outerRadius="100%"
-          data={data}
-          startAngle={90}
-          endAngle={450}
-          barSize={14}
-        >
-          <PolarAngleAxis
-            type="number"
-            domain={[0, 100]}
-            dataKey="value"
-            angleAxisId={0}
-            tick={false}
-          />
-          <RadialBar background dataKey="value" cornerRadius={5} />
-        </RadialBarChart>
+        <div className="flex justify-center">
+          <RadialBarChart
+            width={270}
+            height={270}
+            innerRadius="20%"
+            outerRadius="100%"
+            data={data}
+            startAngle={90}
+            endAngle={450}
+            barSize={14}
+          >
+            <PolarAngleAxis
+              type="number"
+              domain={[0, 100]}
+              dataKey="value"
+              angleAxisId={0}
+              tick={false}
+            />
+            <RadialBar background dataKey="value" cornerRadius={5} />
+          </RadialBarChart>
+        </div>
 
         {/* Legend and Data */}
         <div className="flex flex-col gap-6">

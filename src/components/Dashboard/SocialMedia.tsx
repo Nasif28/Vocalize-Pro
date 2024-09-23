@@ -23,23 +23,21 @@ import { Separator } from "../ui/separator";
 
 export default function SocialMedia() {
   return (
-    <Card className="w-full p-6 h-[448px]">
-      <CardContent className="flex justify-between ">
-        <div>
+    <Card className="h-auto w-full p-6 rounded-md ">
+      <CardContent className="flex flex-col lg:flex-row items-center  gap-4 lex justify-between">
+        <div className="text-center lg:text-start">
           <h2 className="text-xl font-bold">Social Media</h2>
           <p className="text-sm text-gray-700">
             From here you can see all connected social media
           </p>
         </div>
 
-        <div className="flex items-center space-x-4">
-          <ViewMore />
-        </div>
+        <ViewMore />
       </CardContent>
 
       <hr className="mx-3" />
 
-      <CardContent className="py-6 flex justify-between">
+      <CardContent className="pt-6 flex justify-between">
         <div className="w-full p-6 bg-blue-100  rounded-lg  flex flex-col space-y-5">
           <div>
             <div>
@@ -87,7 +85,9 @@ export default function SocialMedia() {
               </div>
             </div>
           </div>
+
           <Separator className=" bg-slate-400 " />
+
           <div>
             <div>
               <h2 className="text-xl font-semibold">

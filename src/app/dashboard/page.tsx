@@ -8,41 +8,43 @@ import Cloud from "@/components/Dashboard/Cloud";
 import Invite from "@/components/Dashboard/Invite";
 import { Separator } from "@/components/ui/separator";
 import AllSocialMediaPost from "@/components/Dashboard/AllSocialMediaPost";
+import Category from "@/components/Dashboard/Category";
+import Templates from "@/components/Dashboard/Templates";
 
 const Dashboard = () => {
   return (
     <div>
       <h3 className="font-bold text-xl text-[#0B2A46]">Dashboard</h3>
-      <Separator className="my-3 " />
+      <Separator className="my-3" />
 
       {/* Grid Container for Dashboard Sections */}
-      <div className="grid gap-7 md:col-span-2 mt-4">
+      <div className="grid gap-7 mt-4">
         {/* First row - Progress and Post */}
-        <div className=" flex gap-7 grid-cols-1 md:grid-cols-2 xl:grid-cols-2 md:col-span-2">
+        <div className="grid grid-cols-1 gap-7 xl:grid-cols-2">
           <Progress />
           <Post />
         </div>
 
         {/* Second row - Social Media and Summary */}
-        <div className="grid gap-7 grid-cols-1 md:grid-cols-2 xl:grid-cols-2 md:col-span-2">
+        <div className="grid grid-cols-1 gap-7 xl:grid-cols-2">
           <SocialMedia />
           <Summary />
         </div>
 
         {/* Social Media Section */}
-        <div className="md:col-span-2 xl:col-span-3">
+        <div className="w-full">
           <AllSocialMediaPost />
         </div>
 
         {/* Posted Section */}
-        <div className="grid gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-7 lg:grid-cols-2 xl:grid-cols-3">
           <Posted />
-          <Posted />
-          <Posted />
+          <Category />
+          <Templates />
         </div>
 
         {/* Cloud and Invite Section */}
-        <div className="grid gap-7 grid-cols-1 sm:grid-cols-2 md:grid-cols-2 xl:grid-cols-2 md:col-span-2 xl:col-span-3">
+        <div className="grid grid-cols-1 gap-7  xl:grid-cols-2">
           <Cloud />
           <Invite />
         </div>

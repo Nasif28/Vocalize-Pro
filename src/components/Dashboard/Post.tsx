@@ -2,13 +2,9 @@
 import * as React from "react";
 import { PieChart, Pie, Cell } from "recharts";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ChevronDownIcon } from "lucide-react";
 import { MonthSwitcher } from "../month-switcher";
 import ViewMore from "../ViewMore";
-// import { ChevronDownIcon } from "@heroicons/react/outline";
 
-// Sample data based on the image
 const data = [
   { name: "Total Post", value: 35, color: "#3457FF" }, // Blue
   { name: "Total View", value: 25, color: "#FF6384" }, // Pink
@@ -46,15 +42,14 @@ const renderLabel = ({
 
 const PostProgress = () => {
   return (
-    <Card className="w-full p-6 h-[366px] grow ">
-      <CardContent className="flex justify-between items-center">
-        <div>
+    <Card className="w-full p-6 h-auto grow">
+      <CardContent className="flex flex-col lg:flex-row items-center  gap-4 lex justify-between">
+        <div className="text-center lg:text-start">
           <h2 className="text-xl font-bold">Post</h2>
           <p className="text-sm text-gray-700">
-            All post information is available here.
+            All post information is available here
           </p>
         </div>
-
         <div className="flex items-center space-x-4">
           <ViewMore />
           <MonthSwitcher />
@@ -64,7 +59,7 @@ const PostProgress = () => {
       <hr className="mx-3" />
 
       {/* Pie Chart and Data Legend */}
-      <CardContent className="flex items-center justify-around">
+      <CardContent className="pt-5 flex flex-col lg:flex-row items-center justify-around gap-8">
         {/* Data Legend */}
         <div className="flex flex-col gap-6">
           {data.map((item) => (
@@ -80,22 +75,24 @@ const PostProgress = () => {
         </div>
 
         {/* Pie Chart */}
-        <PieChart width={250} height={250}>
-          <Pie
-            data={data}
-            cx={125}
-            cy={125}
-            labelLine={false}
-            label={renderLabel}
-            outerRadius={100}
-            fill="#8884d8"
-            dataKey="value"
-          >
-            {data.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={entry.color} />
-            ))}
-          </Pie>
-        </PieChart>
+        <div className="flex justify-center">
+          <PieChart width={250} height={250}>
+            <Pie
+              data={data}
+              cx={125}
+              cy={125}
+              labelLine={false}
+              label={renderLabel}
+              outerRadius={100}
+              fill="#8884d8"
+              dataKey="value"
+            >
+              {data.map((entry, index) => (
+                <Cell key={`cell-${index}`} fill={entry.color} />
+              ))}
+            </Pie>
+          </PieChart>
+        </div>
       </CardContent>
     </Card>
   );
