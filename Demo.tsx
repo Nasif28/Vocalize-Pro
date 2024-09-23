@@ -1,124 +1,164 @@
-"use client"
-
-import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts"
+"use client";
+import { signIn } from "next-auth/react";
+import { useForm } from "react-hook-form";
+import { useRouter, useSearchParams } from "next/navigation";
+import { useState, useEffect } from "react";
+import * as z from "zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import {
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormMessage,
+} from "@/components/ui/form";
+import {
   Card,
-  CardContent,
-  CardDescription,
   CardHeader,
+  CardContent,
   CardTitle,
-} from "@/components/ui/card"
-import { ChartContainer } from "@/components/ui/chart"
+  CardDescription,
+} from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 
-export default function Component() {
+const formSchema = z.object({
+  email: z
+    .string()
+    .trim()
+    .min(1, { message: "Email is required" })
+    .email({ message: "Please enter a valid email" })
+    .refine((val) => val.includes("@") && val.includes(".com"), {
+      message: "Must enter a valid email address",
+    }),
+
+  password: z
+    .string()
+    .trim()
+    .min(6, { message: "Password must be at least 6 characters" })
+    .regex(/[0-9]/, { message: "Password must contain at least one number" })
+    .regex(/[A-Z]/, {
+      message: "Password must contain at least one uppercase letter",
+    })
+    .regex(/[@$!%*?&#]/, {
+      message: "Password must contain at least one special character",
+    }),
+});
+
+const LoginForm = () => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [loginError, setLoginError] = useState<string | null>(null);
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: { email: "", password: "" },
+    mode: "onSubmit",
+  });
+
+  const handleSubmit = async (data: z.infer<typeof formSchema>) => {
+    setIsSubmitting(true);
+    setLoginError(null);
+
+    const callbackUrl = searchParams.get("callbackUrl") || "/";
+
+    const res = await signIn("credentials", {
+      redirect: false,
+      email: data.email,
+      password: data.password,
+      callbackUrl,
+    });
+
+    setIsSubmitting(false);
+
+    if (res?.ok && res?.url) {
+      router.push(res.url);
+    } else {
+      setLoginError("Invalid email or password.");
+    }
+  };
+
+  useEffect(() => {
+    const firstError =
+      form.formState.errors?.email || form.formState.errors?.password;
+    if (firstError) {
+      const fieldToFocus =
+        firstError === form.formState.errors.email ? "email" : "password";
+      const input = document.querySelector(
+        `input[name="${fieldToFocus}"]`
+      ) as HTMLElement;
+      input?.focus();
+    }
+  }, [form.formState.errors]);
+
   return (
-    <Card className="max-w-xs">
-      
-      <CardContent className="grid gap-4">
-        <div className="grid auto-rows-min gap-2">
-          <div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
-            12,453
-            <span className="text-sm font-normal text-muted-foreground">
-              steps/day
-            </span>
-          </div>
-          <ChartContainer
-            config={{
-              steps: {
-                label: "Steps",
-                color: "hsl(var(--chart-1))",
-              },
-            }}
-            className="aspect-auto h-[32px] w-full"
+    <Card>
+      <CardHeader>
+        <CardTitle>Login</CardTitle>
+        <CardDescription>
+          Log into your account with stricter security requirements.
+        </CardDescription>
+      </CardHeader>
+
+      <CardContent className="space-y-6">
+        <Form {...form}>
+          <form
+            onSubmit={form.handleSubmit(handleSubmit)}
+            className="space-y-6"
           >
-            <BarChart
-              accessibilityLayer
-              layout="vertical"
-              margin={{
-                left: 0,
-                top: 0,
-                right: 0,
-                bottom: 0,
-              }}
-              data={[
-                {
-                  date: "2024",
-                  steps: 12435,
-                },
-              ]}
-            >
-              <Bar
-                dataKey="steps"
-                fill="var(--color-steps)"
-                radius={4}
-                barSize={32}
-              >
-                <LabelList
-                  position="insideLeft"
-                  dataKey="date"
-                  offset={8}
-                  fontSize={12}
-                  fill="white"
-                />
-              </Bar>
-              <YAxis dataKey="date" type="category" tickCount={1} hide />
-              <XAxis dataKey="steps" type="number" hide />
-            </BarChart>
-          </ChartContainer>
-        </div>
-        <div className="grid auto-rows-min gap-2">
-          <div className="flex items-baseline gap-1 text-2xl font-bold tabular-nums leading-none">
-            10,103
-            <span className="text-sm font-normal text-muted-foreground">
-              steps/day
-            </span>
-          </div>
-          <ChartContainer
-            config={{
-              steps: {
-                label: "Steps",
-                color: "hsl(var(--muted))",
-              },
-            }}
-            className="aspect-auto h-[32px] w-full"
-          >
-            <BarChart
-              accessibilityLayer
-              layout="vertical"
-              margin={{
-                left: 0,
-                top: 0,
-                right: 0,
-                bottom: 0,
-              }}
-              data={[
-                {
-                  date: "2023",
-                  steps: 10103,
-                },
-              ]}
-            >
-              <Bar
-                dataKey="steps"
-                fill="var(--color-steps)"
-                radius={4}
-                barSize={32}
-              >
-                <LabelList
-                  position="insideLeft"
-                  dataKey="date"
-                  offset={8}
-                  fontSize={12}
-                  fill="hsl(var(--muted-foreground))"
-                />
-              </Bar>
-              <YAxis dataKey="date" type="category" tickCount={1} hide />
-              <XAxis dataKey="steps" type="number" hide />
-            </BarChart>
-          </ChartContainer>
-        </div>
+            {/* Email Field */}
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="email"
+                      placeholder="Enter your email"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* Password Field */}
+            <FormField
+              control={form.control}
+              name="password"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Password</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="password"
+                      placeholder="Enter your password"
+                      {...field}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            {/* Login Error */}
+            {loginError && <p className="text-red-600 text-sm">{loginError}</p>}
+
+            {/* Submit Button */}
+            <Button type="submit" className="w-full" disabled={isSubmitting}>
+              {isSubmitting ? "Signing In..." : "Sign In"}
+            </Button>
+          </form>
+        </Form>
       </CardContent>
     </Card>
-  )
-}
+  );
+};
+
+export default LoginForm;

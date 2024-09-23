@@ -2,10 +2,10 @@ import type { Metadata } from "next";
 import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
-import SessionWrapper from "./SessionWrapper";
+import { SessionWrapper, ReduxWrapper } from "./SessionWrapper";
 
 const beVietnamPro = Be_Vietnam_Pro({
-  weight: ["400", "500", "600", "700", "900"], 
+  weight: ["400", "500", "600", "700", "900"],
   subsets: ["latin"],
   variable: "--font-be-vietnam-pro",
 });
@@ -21,19 +21,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <SessionWrapper>
-      <html lang="en">
-        <body className={`${beVietnamPro.variable}  antialiased maxContainer`}>
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
+    <ReduxWrapper>
+      <SessionWrapper>
+        <html lang="en">
+          <body
+            className={`${beVietnamPro.variable}  antialiased maxContainer`}
           >
-            <main>{children}</main>
-          </ThemeProvider>
-        </body>
-      </html>
-    </SessionWrapper>
+            <ThemeProvider
+              attribute="class"
+              defaultTheme="system"
+              enableSystem
+              disableTransitionOnChange
+            >
+              <main>{children}</main>
+            </ThemeProvider>
+          </body>
+        </html>
+      </SessionWrapper>
+    </ReduxWrapper>
   );
 }
