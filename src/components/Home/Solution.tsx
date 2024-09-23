@@ -2,14 +2,7 @@
 import React, { useState } from "react";
 import CarouselItem from "./CarouselItem";
 
-const carouselItems = [
-  // "Slide 1: Lorem ipsum dolor sit amet.",
-  // "Slide 2: Consectetur adipiscing elit.",
-  // "Slide 3: Integer nec odio. Praesent libero.",
-  <CarouselItem />,
-  <CarouselItem />,
-  <CarouselItem />,
-];
+const carouselItems = [<CarouselItem />, <CarouselItem />, <CarouselItem />];
 
 const Solution = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -33,17 +26,20 @@ const Solution = () => {
       style={{ backgroundImage: 'url("/solution/bg.png")' }}
     >
       {/* Blue transparent overlay */}
-      <div className="absolute inset-0 bg-blue-700 bg-opacity-85"></div>
+      <div className="absolute inset-0 bg-blue-700 bg-opacity-85 dark:bg-gray-700 dark:bg-opacity-85"></div>
 
       {/* Content */}
-      <div className="relative z-10 py-12 px-6 text-center text-white">
-        <h1 className="text-4xl lg:text-5xl font-bold mb-4">One Stop Solution</h1>
+      <div className="relative z-10 py-12 px-6 text-center text-white dark:text-gray-200">
+        <h1 className="text-4xl lg:text-5xl font-bold mb-4">
+          One Stop Solution
+        </h1>
         <p className="text-lg mb-12">
-          Your one-stop solution for transforming audio and <br className="hidden md:block" /> video into a
-          wide range of content formats.
+          Your one-stop solution for transforming audio and{" "}
+          <br className="hidden md:block" /> video into a wide range of content
+          formats.
         </p>
 
-        <div className="relative w-full  mx-auto">
+        <div className="relative w-full mx-auto">
           <div className="overflow-hidden rounded-lg">
             <div
               className="flex transition-transform duration-300"
@@ -60,19 +56,20 @@ const Solution = () => {
             </div>
           </div>
 
+          {/* Carousel Indicators */}
           <div className="absolute inset-x-0 bottom-0 flex justify-center py-2">
             <div className="flex space-x-8">
               {carouselItems.map((_, index) => (
                 <div
                   key={index}
-                  className="rounded-full transition-colors duration-300"
+                  className="rounded-full transition-colors duration-300 cursor-pointer"
                   style={{
                     width: "20px",
                     height: "20px",
                     backgroundColor:
                       currentIndex === index
                         ? "rgba(255, 255, 255, 1)"
-                        : "rgba(255, 255, 255, 0.5)", // White when active, 50% transparent white when inactive
+                        : "rgba(255, 255, 255, 0.5)",
                   }}
                   onClick={() => setCurrentIndex(index)}
                 />

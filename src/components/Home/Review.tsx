@@ -74,7 +74,7 @@ const Review = () => {
             <h2 className="text-5xl font-bold">
               What our customers say about us
             </h2>
-            <p className="text-xl text-gray-500 py-4">
+            <p className="text-xl text-gray-600 dark:text-gray-300 py-4">
               Our Trustworthy Customer
             </p>
           </div>
@@ -92,8 +92,8 @@ const Review = () => {
                       : "scale-100"
                   }`}
                   style={{
-                    bottom: `${(index + 1) * 190}px`, // Vertically spaced
-                    left: `${index % 2 === 0 ? "50px" : "250px"}`, // Alternates between left and right for each avatar
+                    bottom: `${(index + 1) * 190}px`,
+                    left: `${index % 2 === 0 ? "50px" : "250px"}`,
                   }}
                   onClick={() => setActiveTestimonial(testimonial)}
                 >
@@ -159,6 +159,7 @@ const Review = () => {
                 alt={activeTestimonial.name}
                 className="mx-auto w-20 h-14 my-10"
               />
+
               <div className="w-72 h-72 mx-auto my-8 rounded-full overflow-hidden">
                 <img
                   src={activeTestimonial.image}
@@ -166,9 +167,11 @@ const Review = () => {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <p className="italic text-lg text-gray-600 my-6 xl:w-1/2 mx-auto">
+
+              <p className="italic text-lg text-gray-600 dark:text-gray-300 my-6 xl:w-1/2 mx-auto">
                 "{activeTestimonial.review}"
               </p>
+
               <div className="">
                 <span className="text-lg font-semibold text-[#4A2BF1]">
                   {activeTestimonial.name}

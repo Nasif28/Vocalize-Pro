@@ -28,13 +28,14 @@ const Manage = () => {
           <h3 className="text-[40px] lg:text-[55px] leading-[48px] lg:leading-[63px] font-bold mb-4 pr-0 lg:pr-4">
             Effortlessly Manage All Your Podcasts From A Single Dashboard.
           </h3>
-          <p className="text-[18px] lg:text-[20px] leading-[28px] lg:leading-[30px] text-gray-900 mb-4 max-w-xl mx-auto lg:mx-0">
+
+          <p className="text-[18px] lg:text-[20px] leading-[28px] lg:leading-[30px] text-gray-900 dark:text-gray-400 mb-4 max-w-xl mx-auto lg:mx-0">
             Etaque molestias enim quo harum ex, inventore eos corporis
             temporibus sint reiciendis nemo similique consequuntur eum. Etaque
             molestias enim quo harum ex, inventore eos corporis temporibus sint
             reiciendis nemo similique consequuntur eum.
           </p>
-          <p className="text-[18px] lg:text-[20px] leading-[28px] lg:leading-[30px] text-gray-900 mb-6 max-w-xl mx-auto lg:mx-0">
+          <p className="text-[18px] lg:text-[20px] leading-[28px] lg:leading-[30px] text-gray-900 dark:text-gray-400 mb-6 max-w-xl mx-auto lg:mx-0">
             Etaque molestias enim quo harum ex, inventore eos corporis
             temporibus sint reiciendis nemo similique consequuntur eum. Etaque
             molestias enim quo harum ex, inventore eos corporis temporibus sint

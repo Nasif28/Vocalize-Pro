@@ -1,7 +1,6 @@
 import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-// Add your provider (email/password) or third-party providers (Google, GitHub)
 const handler = NextAuth({
   providers: [
     CredentialsProvider({
@@ -11,10 +10,8 @@ const handler = NextAuth({
         password: { label: "Password", type: "password" },
       },
       authorize: async (credentials) => {
-        // Capture email and password
         const user = { id: "1", name: "User", email: credentials?.email };
 
-        // Return user object to create a session
         if (user) {
           return user;
         } else {
@@ -24,7 +21,7 @@ const handler = NextAuth({
     }),
   ],
   pages: {
-    signIn: "/auth", // Redirect to your custom login page
+    signIn: "/auth",
   },
 });
 

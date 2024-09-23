@@ -6,10 +6,10 @@ import { MonthSwitcher } from "../month-switcher";
 import ViewMore from "../ViewMore";
 
 const data = [
-  { name: "Total Post", value: 35, color: "#3457FF" }, // Blue
-  { name: "Total View", value: 25, color: "#FF6384" }, // Pink
-  { name: "Total Comments", value: 22, color: "#FFA500" }, // Orange
-  { name: "Total React", value: 10, color: "#00C49F" }, // Green
+  { name: "Total Post", value: 35, color: "#3457FF" },
+  { name: "Total View", value: 25, color: "#FF6384" },
+  { name: "Total Comments", value: 22, color: "#FFA500" },
+  { name: "Total React", value: 10, color: "#00C49F" },
 ];
 
 const RADIAN = Math.PI / 180;

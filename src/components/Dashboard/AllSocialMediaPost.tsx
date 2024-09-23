@@ -6,7 +6,6 @@ import { BsCloudSun } from "react-icons/bs";
 import { RiEyeLine } from "react-icons/ri";
 import { FaRegComments, FaRegSmile } from "react-icons/fa";
 
-// Sample data for social media posts
 const socialMediaData = [
   {
     platform: "Facebook",
@@ -73,26 +72,26 @@ const AllSocialMediaPost = () => {
           {socialMediaData.map((social, index) => (
             <div
               key={index}
-              className="w-full p-6 bg-blue-100 rounded-lg flex flex-col space-y-3"
+              className="w-full p-6 bg-blue-100 dark:bg-slate-900 rounded-lg flex flex-col space-y-3"
             >
               <h2 className="text-xl font-semibold">{social.platform}</h2>
               <Separator className="bg-slate-400" />
               <div className="flex flex-col gap-3">
-                <div className="bg-white rounded-lg p-3 flex justify-between">
+                <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-3 flex justify-between">
                   <div className="flex gap-2 items-center">
                     <BsCloudSun /> Total Post
                   </div>
                   <div className="text-[#355BFB] font-bold">{social.posts}</div>
                 </div>
 
-                <div className="bg-white rounded-lg p-3 flex justify-between">
+                <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-3 flex justify-between">
                   <div className="flex gap-2 items-center">
                     <RiEyeLine /> View
                   </div>
                   <div className="text-[#355BFB] font-bold">{social.views}</div>
                 </div>
 
-                <div className="bg-white rounded-lg p-3 flex justify-between">
+                <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-3 flex justify-between">
                   <div className="flex gap-2 items-center">
                     <FaRegComments /> Comments
                   </div>
@@ -101,7 +100,7 @@ const AllSocialMediaPost = () => {
                   </div>
                 </div>
 
-                <div className="bg-white rounded-lg p-3 flex justify-between">
+                <div className="bg-slate-50 dark:bg-slate-700 rounded-lg p-3 flex justify-between">
                   <div className="flex gap-2 items-center">
                     <FaRegSmile /> Reacts
                   </div>

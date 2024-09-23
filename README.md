@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vocalize Pro
 
-## Getting Started
+Vocalize Pro is an AI-powered transcription tool that converts audio into text. This web-based solution provides an intuitive user interface to manage and visualize transcription data, offering chart displays and a seamless authentication system.
 
-First, run the development server:
+## Table of Contents
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [How to Contribute](#how-to-contribute)
+- [License](#license)
+
+## Features
+
+- **AI Transcript**: Convert audio to text quickly and efficiently.
+- **Charts**: Visual representation of data using Recharts and Shadcn UI.
+- **Authentication**: Secure authentication using NextAuth.js.
+- **Responsive Design**: Mobile-first design with Tailwind CSS.
+- **Form Validation**: Zod for form schema validation.
+
+## Tech Stack
+
+- **Frontend**: Next.js, React
+- **Styling**: Tailwind CSS, Shadcn UI
+- **Charts**: Recharts, Shadcn UI
+- **Validation**: Zod
+- **Authentication**: NextAuth.js
+- **Package Manager**: npm
+
+## Installation
+
+To run this project locally:
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Nasif28/Vocalize-Pro.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd Vocalize-Pro
+   ```
+3. Install the dependencies:
+   ```bash
+   npm install
+   ```
+4. Run the development server:
+   ```bash
+   npm run dev
+   ```
+5. Open `http://localhost:3000` in your browser to view the application.
+
+## Usage
+
+Once the development server is running, you can:
+
+- View AI-generated transcripts.
+- Authenticate using the NextAuth login system.
+- View data visualizations and charts.
+
+## Project Structure
+
+```plaintext
+├── components/       # UI components
+├── pages/            # Next.js page routes
+├── public/           # Public assets
+├── styles/           # Global styles and Tailwind config
+├── package.json      # Project dependencies and scripts
+├── tailwind.config.js # Tailwind CSS configuration
+├── tsconfig.json     # TypeScript configuration
+└── README.md         # Project documentation
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How to Contribute
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature-branch`).
+3. Commit your changes (`git commit -m 'Add a feature'`).
+4. Push to the branch (`git push origin feature-branch`).
+5. Create a Pull Request.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This README gives a comprehensive overview of your project. Let me know if you need any adjustments!

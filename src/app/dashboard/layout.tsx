@@ -1,4 +1,4 @@
-"use client"; // Ensure this is a client component
+"use client";
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -12,22 +12,20 @@ const MainLayout = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (status === "unauthenticated") {
-      // Redirect to /auth with the callbackUrl set to /dashboard
       router.push(`/auth?callbackUrl=/dashboard`);
     }
   }, [status, router]);
 
-  // Render your dashboard content only if the user is logged in
   if (status === "loading" || !session) return null;
 
   return (
     <div className="bg-slate-100 dark:bg-slate-900">
       <Navbar />
       <div className="myContainer flex">
-        <div className="hidden md:block h-auto max-w-[300px] py-5">
+        <div className=" h-auto max-w-[300px] py-5">
           <Sidebar />
         </div>
-        <div className="p-5">{children}</div>
+        <div className="p-5 mx-auto">{children}</div>
       </div>
     </div>
   );

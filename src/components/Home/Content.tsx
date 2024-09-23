@@ -1,8 +1,5 @@
 "use client";
-
 import React from "react";
-import { cn } from "@/lib/utils";
-
 const CarouselItem = () => {
   function Card({
     deco,
@@ -15,12 +12,12 @@ const CarouselItem = () => {
     logo: string;
     title: string;
     description: string;
-    borderColor: string; // Add borderColor prop
+    borderColor: string;
   }) {
     return (
       <div
-        className="relative p-10 bg-white dark:bg-slate-900 rounded-xl shadow-lg text-gray-800 mb-6 text-left"
-        style={{ borderBottom: `10px solid ${borderColor}` }} // Apply the border color
+        className="relative p-10 bg-white dark:text-gray-300 dark:bg-slate-900 rounded-xl shadow-lg text-gray-800 mb-6 text-left"
+        style={{ borderBottom: `10px solid ${borderColor}` }}
       >
         <img
           src={deco}
@@ -43,7 +40,7 @@ const CarouselItem = () => {
           logo="/content/con1.png"
           title="Apple Podcast"
           description="Google Drive is a cloud storage service developed by Google that allows users to store, share, and access files..."
-          borderColor="#19C1DD" // Set the border color
+          borderColor="#19C1DD"
         />
       </div>
 
@@ -54,7 +51,7 @@ const CarouselItem = () => {
           logo="/content/con2.png"
           title="Google Drive Folder"
           description="Google Drive is a cloud storage service developed by Google that allows users to store, share, and access files..."
-          borderColor="#FC5D19" // Set a different border color
+          borderColor="#FC5D19"
         />
       </div>
 
@@ -65,7 +62,7 @@ const CarouselItem = () => {
           logo="/content/con3.png"
           title="Zoom Recording"
           description="Google Drive is a cloud storage service developed by Google that allows users to store, share, and access files..."
-          borderColor="#F2C94C" // Set another border color
+          borderColor="#F2C94C"
         />
       </div>
 
@@ -76,7 +73,7 @@ const CarouselItem = () => {
           logo="/content/con4.png"
           title="Zoom Recording"
           description="Google Drive is a cloud storage service developed by Google that allows users to store, share, and access files..."
-          borderColor="#EF5DA8" // Set another border color
+          borderColor="#EF5DA8"
         />
       </div>
     </div>

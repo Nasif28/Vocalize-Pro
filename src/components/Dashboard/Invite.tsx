@@ -1,6 +1,5 @@
 "use client";
 import * as React from "react";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons"; // Replace this with your actual icons
 import ViewMore from "../ViewMore";
 import {
   Label,
@@ -45,7 +44,7 @@ const Invite = () => {
       <hr className="mx-3 border-t border-gray-300" />
 
       <CardContent className="grid grid-cols-2 gap-4 rounded-lg py-4 w-full max-w-4xl mx-auto">
-        <div className="bg-blue-50 p-4 rounded-lg flex flex-col space-y-2">
+        <div className="bg-blue-100 dark:bg-slate-900 p-4 rounded-lg flex flex-col space-y-2">
           <div
             className="flex items-center justify-center w-14 h-14 p-3 rounded-full"
             style={{
@@ -61,7 +60,7 @@ const Invite = () => {
         </div>
 
         {/* Score Point Card */}
-        <div className="bg-blue-50 p-4 rounded-lg flex items-center space-x-4">
+        <div className="bg-blue-100 dark:bg-slate-900 p-4 rounded-lg flex items-center space-x-4">
           <div className="flex flex-col space-y-2">
             <div
               className="flex items-center justify-center w-14 h-14 p-3 rounded-full"

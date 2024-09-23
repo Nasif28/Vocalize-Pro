@@ -9,22 +9,22 @@ const Progress = () => {
     {
       name: "Social Media Post",
       value: 50,
-      fill: "#3457FF", // Blue color
+      fill: "#3457FF",
     },
     {
       name: "Blog Post",
       value: 20,
-      fill: "#FFA500", // Orange color
+      fill: "#FFA500",
     },
     {
       name: "Article",
       value: 30,
-      fill: "#00C49F", // Green color
+      fill: "#00C49F",
     },
     {
       name: "Generated summary",
       value: 40,
-      fill: "#FF6384", // Pink color
+      fill: "#FF6384",
     },
   ];
 

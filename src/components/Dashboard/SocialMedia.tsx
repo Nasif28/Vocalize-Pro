@@ -1,14 +1,5 @@
 "use client";
-
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import ViewMore from "../ViewMore";
 import {
   FaFacebookF,
@@ -38,7 +29,8 @@ export default function SocialMedia() {
       <hr className="mx-3" />
 
       <CardContent className="pt-6 flex justify-between">
-        <div className="w-full p-6 bg-blue-100  rounded-lg  flex flex-col space-y-5">
+        <div className="w-full p-6 bg-blue-100 dark:bg-slate-900  rounded-lg  flex flex-col space-y-5">
+          {/* Connected Social Media */}
           <div>
             <div>
               <h2 className="text-xl font-semibold">Connected Social Media</h2>
@@ -88,6 +80,7 @@ export default function SocialMedia() {
 
           <Separator className=" bg-slate-400 " />
 
+          {/* Not Connected Social Media */}
           <div>
             <div>
               <h2 className="text-xl font-semibold">

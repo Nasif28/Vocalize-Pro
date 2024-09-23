@@ -12,7 +12,7 @@ import { IoCashOutline } from "react-icons/io5";
 const pricingPlans = {
   monthly: [
     {
-      icon: <RiCoinsLine />, // Icon for Free Plan
+      icon: <RiCoinsLine />,
       name: "Free Plan",
       price: "$0",
       features: [
@@ -29,7 +29,7 @@ const pricingPlans = {
       buttonText: "Sign up for free",
     },
     {
-      icon: <BsCashCoin />, // Icon for Standard Plan
+      icon: <BsCashCoin />,
       name: "Standard Plan",
       price: "$20",
       features: [
@@ -47,7 +47,7 @@ const pricingPlans = {
       badge: "Best Schema",
     },
     {
-      icon: <IoCashOutline />, // Icon for Advanced Plan
+      icon: <IoCashOutline />,
       name: "Advanced Plan",
       price: "$50",
       features: [
@@ -64,7 +64,7 @@ const pricingPlans = {
       buttonText: "Sign up for free",
     },
     {
-      icon: <LiaCoinsSolid />, // Icon for Pro Plan
+      icon: <LiaCoinsSolid />,
       name: "Pro Plan",
       price: "$100",
       features: [
@@ -102,7 +102,7 @@ const pricingPlans = {
     {
       icon: <BsCashCoin />,
       name: "Standard Plan",
-      price: "$200", // Equivalent to $16.66/month (20% discount)
+      price: "$200",
       features: [
         "20 post a month",
         "Unlimited Audio Transcribe",
@@ -120,7 +120,7 @@ const pricingPlans = {
     {
       icon: <IoCashOutline />,
       name: "Advanced Plan",
-      price: "$500", // Equivalent to $41.66/month (16% discount)
+      price: "$500",
       features: [
         "50 post a month",
         "Unlimited Audio Transcribe",
@@ -137,7 +137,7 @@ const pricingPlans = {
     {
       icon: <LiaCoinsSolid />,
       name: "Pro Plan",
-      price: "$1000", // Equivalent to $83.33/month (16% discount)
+      price: "$1000",
       features: [
         "Unlimited post a month",
         "Unlimited Audio Transcribe",
@@ -171,20 +171,23 @@ const Pricing = () => {
           alt="Icon 1"
           className="absolute top-20 left-0 w-10 h-10 md:w-auto md:h-auto"
         />
+
         {/* Title and Switch */}
         <div className="text-center mb-8 pt-28">
           <h2 className="text-5xl text-center font-bold  ">Our Pricing Plan</h2>
 
           <p className="my-6 text-xl   text-gray-600">
-            Affordable AI service for transforming audio and video <br className="hidden md:block" /> into
-            various content formats.
+            Affordable AI service for transforming audio and video{" "}
+            <br className="hidden md:block" /> into various content formats.
           </p>
 
           {/* Switch Section */}
           <div className="flex justify-center items-center mb-16 rounded-full shadow-md border  py-3  px-10 max-w-min mx-auto">
             <span
               className={` font-bold  ${
-                !isYearly ? "text-[#4A2BF1]" : "text-[#08212980]"
+                !isYearly
+                  ? "text-[#4A2BF1]"
+                  : "text-[#08212980] dark:text-[#b7e8f780]"
               }`}
             >
               Monthly
@@ -206,7 +209,9 @@ const Pricing = () => {
 
             <span
               className={`  font-bold ${
-                isYearly ? "text-[#4A2BF1]" : "text-[#08212980]"
+                isYearly
+                  ? "text-[#4A2BF1]"
+                  : "text-[#08212980] dark:text-[#b7e8f780]"
               }`}
             >
               Yearly
@@ -219,18 +224,16 @@ const Pricing = () => {
           {pricingPlans[isYearly ? "yearly" : "monthly"].map((plan, idx) => (
             <div
               key={idx}
-              className="bg-white mx-1 rounded-xl shadow-lg  relative group"
+              className="bg-white dark:bg-slate-400 mx-1 rounded-xl shadow-lg  relative group"
             >
-              <div className="relative bg-white text-gray-900 rounded-t-xl transition-colors duration-300 group-hover:bg-[#4A2BF1]">
-                {/* Blue background section for hover effect */}
-                {/* <div className="absolute inset-0 rounded-t-xl transform -translate-y-2 transition-all duration-300  group-hover:bg-blue-600"></div> */}
-
+              <div className="relative bg-white dark:bg-slate-400 text-gray-900 rounded-t-xl transition-colors duration-300 group-hover:bg-[#4A2BF1]">
                 <div className="pt-10 px-10 pb-5 relative ">
                   {plan.badge && (
                     <div className="relative">
                       <div className="absolute  top-5 -right-12 bg-orange-500 text-sm px-5 py-2 rounded-tl-lg rounded-tr-lg rounded-bl-lg shadow-lg">
                         <div className="text-white text-sm">
                           {plan.badge}
+
                           {/* Rotated Triangle on bottom-right side */}
                           <div className="Triangle z-[-1] absolute  w-0 h-0 transform rotate-[135deg] border-l-8 border-l-transparent border-t-8 border-t-[#D15A00] border-r-8 border-r-transparent -bottom-1.5 right-0"></div>
                         </div>
@@ -243,6 +246,7 @@ const Pricing = () => {
                     <div className="text-[#4A2BF1] text-5xl duration-300 group-hover:text-white">
                       {plan.icon}
                     </div>
+
                     <h3 className="text-xl font-bold text-gray-900 duration-300 group-hover:text-white pt-2">
                       {plan.name}
                     </h3>
@@ -267,7 +271,8 @@ const Pricing = () => {
                     </li>
                   ))}
                 </ul>
-                <Button className="rounded-xl mt-8 py-5 w-full group-hover:bg-[#4A2BF1] group-hover:text-white bg-white text-[#4A2BF1] border group-hover:border-collapse border-[#4A2BF1]">
+
+                <Button className="rounded-xl mt-8 py-5 w-full group-hover:bg-[#4A2BF1] group-hover:text-white bg-white dark:bg-slate-400 text-[#4A2BF1] border group-hover:border-collapse border-[#4A2BF1]">
                   {plan.buttonText}
                 </Button>
               </div>

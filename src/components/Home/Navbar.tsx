@@ -48,22 +48,6 @@ export default function Navbar() {
             <Account />
           ) : (
             <>
-              {/* <Link href="/auth" passHref>
-                <Button variant="ghost">
-                  <CircleUser className="h-5 w-5 mr-2" />
-                  Login
-                </Button>
-              </Link> */}
-              {/* Sign Up Button */}
-              {/* <Link href="/auth" passHref>
-                <Button
-                  className="hidden md:inline-flex items-center justify-center rounded-2xl p-[22px_28px] text-[rgba(74,43,241,1)]"
-                  variant="secondary"
-                >
-                  <GoPersonAdd className="h-5 w-5 mr-2" />
-                  Sign Up
-                </Button>
-              </Link> */}
               <Button variant="ghost" onClick={() => signIn()}>
                 <CircleUser className="h-4 w-4 mr-1" />
                 Login
@@ -91,15 +75,18 @@ export default function Navbar() {
                 <RiMenu3Fill className="w-6 h-6" />
               </button>
             </SheetTrigger>
+
             <SheetContent className="bg-slate-200 dark:bg-slate-800">
               {/* Mobile Menu inside Sheet */}
               <div className="flex flex-col items-end space-y-4 mt-4 p-4">
                 {/* Add navigation links */}
                 <NavMenu />
+
                 {/* Login/Signup and Theme Switcher for mobile */}
                 <div className="flex flex-col items-end space-y-4  pe-4">
                   <LanguageSwitcher />
                   <ThemeSwitcher />
+
                   {session ? (
                     <Account />
                   ) : (
@@ -107,6 +94,7 @@ export default function Navbar() {
                       <Button variant="ghost" onClick={() => signIn()}>
                         Login
                       </Button>
+
                       <Button
                         className="inline-flex items-center justify-center rounded-2xl p-[22px_28px] text-[rgba(74,43,241,1)]"
                         variant="secondary"

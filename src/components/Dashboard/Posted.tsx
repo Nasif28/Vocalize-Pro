@@ -1,15 +1,13 @@
 "use client";
 import React from "react";
-import { Bar, BarChart, LabelList, XAxis, YAxis } from "recharts";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
-import { ChartContainer } from "@/components/ui/chart";
 import { Progress } from "@/components/ui/progress";
 
 const PostedOn = () => {
   return (
     <Card className="h-auto w-full p-6 rounded-md ">
-    <CardContent className="flex flex-col lg:flex-row items-center  gap-4 lex justify-between">
-      <div className="text-center lg:text-start">
+      <CardContent className="flex flex-col lg:flex-row items-center  gap-4 lex justify-between">
+        <div className="text-center lg:text-start">
           <h2 className="text-xl font-bold">Posted On</h2>
           <p className="text-sm text-gray-700">
             From here you can see who posted

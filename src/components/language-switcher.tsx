@@ -15,25 +15,17 @@ export function LanguageSwitcher() {
 
   const handleLanguageChange = (lang: string) => {
     setLanguage(lang);
-    // You can add additional logic here, such as updating the app language
   };
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button
-          variant="ghost" // No border as requested
-          className="flex items-center space-x-2"
-        >
+        <Button variant="ghost" className="flex items-center space-x-2">
           <span>{language}</span>
           <ChevronDown />
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        align="end"
-        variant="ghost"
-        // className=" bg-transparent shadow-none border-none"
-      >
+      <DropdownMenuContent align="end" variant="ghost">
         <DropdownMenuItem onClick={() => handleLanguageChange("English")}>
           English
         </DropdownMenuItem>

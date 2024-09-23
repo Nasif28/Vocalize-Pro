@@ -1,14 +1,13 @@
 "use client";
 import * as React from "react";
-import ViewMore from "../ViewMore";
 import { Card, CardContent } from "@/components/ui/card";
 import { BrainCog } from "lucide-react";
 
 const Category = () => {
   return (
     <Card className="h-auto w-full p-6 rounded-md ">
-    <CardContent className="flex flex-col lg:flex-row items-center  gap-4 lex justify-between">
-      <div className="text-center lg:text-start">
+      <CardContent className="flex flex-col lg:flex-row items-center  gap-4 lex justify-between">
+        <div className="text-center lg:text-start">
           <h2 className="text-xl font-bold">Category</h2>
           <p className="text-xs text-gray-700 py-2">
             From here you can see post category
@@ -19,7 +18,7 @@ const Category = () => {
       <hr className="mx-3 border-t border-gray-300" />
 
       <CardContent className="grid grid-cols-2 gap-4 rounded-lg pt-4 w-full max-w-4xl mx-auto">
-        <div className="bg-blue-50 p-3 rounded-lg flex flex-col space-y-2">
+        <div className="bg-blue-100 dark:bg-slate-900 p-3 rounded-lg flex flex-col space-y-2">
           <div
             className="flex items-center justify-center w-10 h-10 p-3 rounded-full"
             style={{
@@ -35,7 +34,7 @@ const Category = () => {
         </div>
 
         {/* Score Point Card */}
-        <div className="bg-blue-50 p-3 rounded-lg flex flex-col space-y-2">
+        <div className="bg-blue-100 dark:bg-slate-900 p-3 rounded-lg flex flex-col space-y-2">
           <div
             className="flex items-center justify-center w-10 h-10 p-3 rounded-full"
             style={{

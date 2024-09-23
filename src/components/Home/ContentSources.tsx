@@ -48,8 +48,9 @@ const ContentSources = () => {
       <div className="relative z-10 py-12 px-6 text-center">
         <h1 className="text-5xl font-bold mb-4">Content Sources</h1>
         <p className="text-lg mb-6">
-          Your one-stop solution for transforming audio and <br className="hidden md:block" /> video into a
-          wide range of content formats.
+          Your one-stop solution for transforming audio and{" "}
+          <br className="hidden md:block" /> video into a wide range of content
+          formats.
         </p>
 
         <div className="relative w-full  mx-auto">

@@ -14,7 +14,9 @@ import Templates from "@/components/Dashboard/Templates";
 const Dashboard = () => {
   return (
     <div>
-      <h3 className="font-bold text-xl text-[#0B2A46]">Dashboard</h3>
+      <h3 className="font-bold text-xl text-[#0B2A46] dark:text-[#355BFB]">
+        Dashboard
+      </h3>
       <Separator className="my-3" />
 
       {/* Grid Container for Dashboard Sections */}

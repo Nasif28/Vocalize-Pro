@@ -13,7 +13,8 @@ const HowItWorks = () => {
       <div className="myContainer ">
         <div className="text-center mb-12">
           <h2 className="text-5xl font-bold">How It Works</h2>
-          <p className="text-md md:text-lg text-gray-700 mt-5">
+
+          <p className="text-md md:text-lg text-gray-600 dark:text-gray-300 mt-5">
             Simple, easy to use interface. Import your media, generate a{" "}
             <br className="hidden md:block" />
             content, and post all connected social media.
@@ -195,9 +196,9 @@ const HowItWorks = () => {
             alt="Sign Up/Registration"
             className="rounded-lg  absolute hidden md:block"
             style={{
-              left: "45%", // Move the image slightly to the left
-              transform: "translateX(-50%)", // Keep it centered horizontally
-              top: "25%", // Adjust top positioning if needed
+              left: "45%",
+              transform: "translateX(-50%)",
+              top: "25%",
             }}
           />
         </div>
@@ -228,6 +229,7 @@ const HowItWorks = () => {
               04
             </div>
           </div>
+
           {/* Image  */}
           <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
@@ -250,9 +252,9 @@ const HowItWorks = () => {
             alt="Sign Up/Registration"
             className="rounded-lg  absolute hidden md:block"
             style={{
-              left: "45%", // Move the image slightly to the left
-              transform: "translateX(-50%)", // Keep it centered horizontally
-              top: "25%", // Adjust top positioning if needed
+              left: "45%",
+              transform: "translateX(-50%)",
+              top: "25%",
             }}
           />
         </div>
@@ -305,9 +307,9 @@ const HowItWorks = () => {
             alt="Sign Up/Registration"
             className="rounded-lg  absolute hidden md:block"
             style={{
-              left: "45%", // Move the image slightly to the left
-              transform: "translateX(-50%)", // Keep it centered horizontally
-              top: "25%", // Adjust top positioning if needed
+              left: "45%",
+              transform: "translateX(-50%)",
+              top: "25%",
             }}
           />
         </div>
@@ -338,6 +340,7 @@ const HowItWorks = () => {
               06
             </div>
           </div>
+
           {/* Image  */}
           <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
@@ -448,6 +451,7 @@ const HowItWorks = () => {
               08
             </div>
           </div>
+
           {/* Image  */}
           <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">

@@ -11,6 +11,8 @@ const Achievements = () => {
           className="w-full h-full object-cover"
         />
       </div>
+       {/* Blue transparent overlay */}
+       <div className="absolute inset-0  dark:bg-gray-900 dark:bg-opacity-85"></div>
 
       {/* Content */}
       <div className="muContainer relative z-10 container mx-auto p-8">

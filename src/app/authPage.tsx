@@ -9,13 +9,12 @@ const AuthPage = () => {
 
   useEffect(() => {
     if (session) {
-      // Extract callbackUrl from the query params or fallback to '/'
       const callbackUrl = router.query.callbackUrl || "/";
-      router.push(callbackUrl as string); // Redirect to callbackUrl if logged in
+      router.push(callbackUrl as string);
     }
   }, [session, router]);
 
-  return !session ? <Login /> : null; // Show login form only if not logged in
+  return !session ? <Login /> : null;
 };
 
 export default AuthPage;

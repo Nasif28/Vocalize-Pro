@@ -9,6 +9,7 @@ import {
 const FAQ = () => {
   return (
     <div
+    id="faq"
       className="relative py-20 text-white text-center"
       style={{
         backgroundImage: 'url("faq.png")',

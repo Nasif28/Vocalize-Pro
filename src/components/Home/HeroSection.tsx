@@ -6,10 +6,9 @@ import { Button } from "../ui/button";
 export default function HeroSection() {
   return (
     <section
-      id="home"
-      style={{ background: "rgba(74, 43, 241, 1)" }}
-      className="text-white relative w-full pt-5"
-    >
+    id="home"
+    className="text-white relative w-full pt-5 bg-[rgba(74,43,241,1)] dark:bg-[rgba(34,34,34,1)]"
+  >
       <Navbar />
 
       {/* Background Icons */}
@@ -55,6 +54,7 @@ export default function HeroSection() {
       <div className="myContainer p-4 flex flex-col md:flex-row items-center  ">
         {/* Left Side (Text Section) */}
         <div className="md:w-1/2 text-center  md:text-left">
+          
           {/* Headline */}
           <h1 className="py-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight lg:leading-[75px]">
             Super easy to{" "}
@@ -99,13 +99,14 @@ export default function HeroSection() {
           <img
             src="/heroellipse.png"
             alt="Background Design"
-            className="absolute w-3/4 md:w-auto z-10 max-h-full" // Adjust size for responsiveness
+            className="absolute w-3/4 md:w-auto z-10 max-h-full"
           />
+
           {/* Foreground Image */}
           <img
             src="/hero.png"
             alt="Transcription Service"
-            className="relative w-3/4 md:w-auto z-20 max-h-full" // Adjust size for responsiveness
+            className="relative w-3/4 md:w-auto z-20 max-h-full"
           />
           <img
             src="/Ornament8.png"

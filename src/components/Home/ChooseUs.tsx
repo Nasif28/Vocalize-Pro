@@ -25,12 +25,14 @@ const ChooseUs = () => {
             <h3 className="text-lg font-bold">
               Automation And <br /> Manual Generate
             </h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum.
             </p>
           </div>
+
           <hr className="border-gray-300" />
+
           {/* Second Coll */}
           <div className="space-y-2">
             <img
@@ -39,7 +41,7 @@ const ChooseUs = () => {
               className="h-12 w-12 mx-auto lg:mx-0"
             />
             <h3 className="text-lg font-bold">Easy To Use</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum.
             </p>
@@ -59,12 +61,13 @@ const ChooseUs = () => {
               className="h-12 w-12 mx-auto lg:mx-0"
             />
             <h3 className="text-lg font-bold">Referral System</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum.
             </p>
           </div>
           <hr className="border-gray-300" />
+
           {/* Second Coll */}
           <div className="space-y-2">
             <img
@@ -73,7 +76,7 @@ const ChooseUs = () => {
               className="h-12 w-12 mx-auto lg:mx-0"
             />
             <h3 className="text-lg font-bold">Secure Application</h3>
-            <p className="text-gray-600">
+            <p className="text-gray-600 dark:text-gray-400">
               Etaque molestias enim quo harum ex, inventore eos corporis
               temporibus sint reiciendis nemo similique consequuntur eum.
             </p>
@@ -82,16 +85,13 @@ const ChooseUs = () => {
       </div>
 
       {/* Right Side */}
-      <div
-        className="px-6 md:px-24 flex flex-col justify-center flex-1 text-center lg:text-left py-5"
-        style={{ backgroundColor: "rgba(235, 236, 254, 1)" }}
-      >
+      <div className="px-6 md:px-24 flex flex-col justify-center flex-1 text-center lg:text-left py-5 bg-[#EBECFE] dark:bg-[#2D2D2D]">
         <div className="mx-auto 2xl:mr-52 ">
           <h2 className="text-4xl md:text-5xl font-bold leading-snug md:leading-[63.25px]">
             Explore Why You Will Choose Us
           </h2>
 
-          <p className="text-md md:text-xl text-gray-600 my-6 ">
+          <p className="text-md md:text-xl text-gray-600 dark:text-gray-400 my-6 ">
             Etaque molestias enim quo harum ex, inventore eos corporis
             temporibus sint reiciendis nemo similique consequuntur eum. Etaque
             molestias enim quo harum ex, inventore eos corporis temporibus sint

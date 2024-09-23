@@ -2,16 +2,13 @@ import Image from "next/image";
 import Link from "next/link";
 import logo from "./../../../public/logo2.png";
 import { NavMenu } from "../NavMenu";
-
 import { ThemeSwitcher } from "../theme-switcher";
 import { TbCrown } from "react-icons/tb";
 import { LanguageSwitcher } from "../language-switcher";
-
 import Account from "../Account";
 import { useSession, signIn } from "next-auth/react";
-import { Menu } from "lucide-react"; // Hamburger Icon
 import { RiMenu3Fill } from "react-icons/ri";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"; // Import Sheet components
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import { Button } from "../ui/button";
 import NotificationIcon from "../notificationIcon";
@@ -74,8 +71,9 @@ const NavbarDashboard = () => {
                 <RiMenu3Fill className="w-6 h-6" />
               </button>
             </SheetTrigger>
+
+            {/* Mobile Menu inside Sheet */}
             <SheetContent className="bg-slate-200 dark:bg-slate-800">
-              {/* Mobile Menu inside Sheet */}
               <div className="flex flex-col items-end space-y-4 mt-4 p-4">
                 <button className="text-sm bg-gradient-to-r from-[#19C2DD] to-[#355BFB] text-white  py-2 px-3 flex items-center gap-[8px] rounded-full shadow-lg">
                   <TbCrown className=" w-5 h-5" />
@@ -84,6 +82,7 @@ const NavbarDashboard = () => {
 
                 {/* Add navigation links */}
                 <NavMenu />
+
                 {/* Login/Signup and Theme Switcher for mobile */}
                 <div className="flex flex-col items-end space-y-4  pe-4">
                   <LanguageSwitcher />

@@ -1,7 +1,5 @@
 "use client";
-
 import React from "react";
-import { cn } from "@/lib/utils";
 
 const CarouselItem = () => {
   function Card({
@@ -14,10 +12,10 @@ const CarouselItem = () => {
     description: string;
   }) {
     return (
-      <div className="p-8 py-12 bg-white rounded-lg shadow-lg text-gray-800 mb-6 text-left">
+      <div className="p-8 py-12 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-gray-800 dark:text-gray-200 mb-6 text-left">
         <img src={logo} alt={title} className="w-[63px] h-[67px]" />
         <h3 className="text-3xl font-bold my-4">{title}</h3>
-        <p className="text-sm  leading-6">{description}</p>
+        <p className="text-sm leading-6">{description}</p>
       </div>
     );
   }

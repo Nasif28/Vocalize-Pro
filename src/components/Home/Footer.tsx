@@ -63,6 +63,7 @@ const Footer = () => {
       </div>
 
       <div className="myContainer relative">
+        
         {/* Newsletter Section */}
         <div className="relative  container mx-auto  py-16 text-center">
           <h2 className="text-2xl md:text-5xl font-bold text-white py-4">

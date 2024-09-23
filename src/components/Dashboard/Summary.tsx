@@ -9,7 +9,7 @@ const Summary = () => {
     {
       name: "Used Words",
       value: 100,
-      fill: "#3457FF", // Blue color (main)
+      fill: "#3457FF",
     },
   ];
 
@@ -75,6 +75,7 @@ const Summary = () => {
               {totalWords} <span className="text-sm">(Words)</span>
             </span>
           </div>
+
           <div className="flex flex-col justify-between text-gray-600">
             <p>Used so far</p>
             <span className=" text-2xl font-semibold text-blue-600">
