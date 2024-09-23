@@ -119,17 +119,17 @@ const Blogs = () => {
               <div className="px-4 pb-6">
                 {/* View, Like, Comment */}
                 <div className="flex items-center justify-between mb-4">
-                  <button className="flex items-center space-x-2 text-[#355BFB] bg-[#355BFB1A] text-xs px-1 py-1 rounded hover:bg-[#355BFB1A]">
+                  <button className="flex items-center space-x-2 text-[#355BFB] dark:text-white bg-[#355BFB1A] dark:bg-slate-600 text-xs px-1 py-1 rounded hover:bg-[#355BFB1A]">
                     <IoEyeOutline size={14} />
                     <span>{card.views}</span>
                   </button>
 
-                  <button className="flex items-center space-x-2 text-[#355BFB] bg-[#355BFB1A] text-xs px-1 py-1 rounded hover:bg-[#355BFB1A]">
+                  <button className="flex items-center space-x-2 text-[#355BFB] dark:text-white bg-[#355BFB1A] dark:bg-slate-600 text-xs px-1 py-1 rounded hover:bg-[#355BFB1A]">
                     <IoMdHeartEmpty size={14} />
                     <span>{card.liked}</span>
                   </button>
 
-                  <button className="flex items-center space-x-2 text-[#355BFB] bg-[#355BFB1A] text-xs px-1 py-1 rounded hover:bg-[#355BFB1A]">
+                  <button className="flex items-center space-x-2 text-[#355BFB] dark:text-white bg-[#355BFB1A] dark:bg-slate-600 text-xs px-1 py-1 rounded hover:bg-[#355BFB1A]">
                     <FaRegComments size={14} />
                     <span>{card.comments}</span>
                   </button>
@@ -149,13 +149,13 @@ const Blogs = () => {
                   </Avatar>
 
                   <div className="flex flex-row ml-2 items-center">
-                    <span className="text-[#4A2BF1] text-xs font-semibold">
+                    <span className=" text-[#4A2BF1] dark:text-white text-xs font-semibold">
                       {card.name}
                     </span>
 
-                    <span className="w-1 h-1 bg-[#546A7E] rounded-full mx-1"></span>
+                    <span className="w-1 h-1 bg-[#546A7E]  rounded-full mx-1"></span>
 
-                    <p className="text-[#546A7E] text-[10px]">{card.read}</p>
+                    <p className="text-[#546A7E] dark:text-slate-400 text-[10px]">{card.read}</p>
                   </div>
                 </div>
 
