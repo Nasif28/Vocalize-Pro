@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const Achievements = () => {
@@ -5,25 +6,28 @@ const Achievements = () => {
     <section className="relative py-12 lg:py-16">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="/achiev.png"
           alt="Background"
+          fill
           className="w-full h-full object-cover"
         />
       </div>
-       {/* Blue transparent overlay */}
-       <div className="absolute inset-0  dark:bg-gray-900 dark:bg-opacity-85"></div>
+      {/* Blue transparent overlay */}
+      <div className="absolute inset-0  dark:bg-gray-900 dark:bg-opacity-85"></div>
 
       {/* Content */}
       <div className="muContainer relative z-10 container mx-auto p-8">
         <div className="items-center mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-10 text-left py-5">
           {/* Box 1 */}
           <div className="bg-white mx-auto bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
-            <div className="flex justify-start w-full">
-              <img
+            <div className="flex justify-start">
+              <Image
                 src="/achievements/a1.png"
                 alt="Icon 1"
-                className="w-[72px] h-[72px]"
+                width={72}
+                height={72}
+                className="w-full h-full"
               />
             </div>
 
@@ -41,11 +45,13 @@ const Achievements = () => {
 
           {/* Box 2 */}
           <div className="bg-white mx-auto bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
-            <div className="flex justify-start w-full">
-              <img
+            <div className="flex justify-start">
+              <Image
                 src="/achievements/a2.png"
                 alt="Icon 2"
-                className="w-[72px] h-[72px]"
+                width={72}
+                height={72}
+                className="w-full h-full"
               />
             </div>
 
@@ -63,11 +69,13 @@ const Achievements = () => {
 
           {/* Box 3 */}
           <div className="bg-white mx-auto bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
-            <div className="flex justify-start w-full">
-              <img
+            <div className="flex justify-start">
+              <Image
                 src="/achievements/a3.png"
                 alt="Icon 3"
-                className="w-[72px] h-[72px]"
+                width={72}
+                height={72}
+                className="w-full h-full"
               />
             </div>
 
@@ -85,11 +93,13 @@ const Achievements = () => {
 
           {/* Box 4 */}
           <div className="bg-white mx-auto bg-opacity-20 backdrop-filter backdrop-blur-lg w-[300px] h-[300px] p-12 rounded-[20px] border border-white shadow-inner flex flex-col justify-between items-start">
-            <div className="flex justify-start w-full">
-              <img
+            <div className="flex justify-start">
+              <Image
                 src="/achievements/a4.png"
                 alt="Icon 4"
-                className="w-[72px] h-[72px]"
+                width={72}
+                height={72}
+                className="w-full h-full"
               />
             </div>
 

@@ -12,7 +12,6 @@ import Link from "next/link";
 import { signOut } from "next-auth/react";
 
 const Account = () => {
-  // const { data: session } = useSession();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="focus:outline-none">

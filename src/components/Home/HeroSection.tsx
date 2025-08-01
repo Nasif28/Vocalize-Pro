@@ -2,35 +2,44 @@ import React from "react";
 import { LuArrowRightCircle } from "react-icons/lu";
 import Navbar from "./Navbar";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
     <section
-    id="home"
-    className="text-white relative w-full pt-5 bg-[rgba(74,43,241,1)] dark:bg-[rgba(34,34,34,1)]"
-  >
+      id="home"
+      className="text-white relative w-full pt-5 bg-[rgba(74,43,241,1)] dark:bg-[rgba(34,34,34,1)]"
+    >
       <Navbar />
 
       {/* Background Icons */}
       <div className="absolute inset-0 pointer-events-none">
-        <img
+        <Image
           src="/Ornament1.png"
           alt="Icon 1"
+          width={200}
+          height={210}
           className="absolute bottom-52 left-12 w-10 h-10 md:w-auto md:h-auto"
         />
-        <img
+        <Image
           src="/Ornament2.png"
           alt="Icon 2"
+          width={200}
+          height={210}
           className="absolute top-44 right-24 w-10 h-10 hidden sm:block"
         />
-        <img
+        <Image
           src="/Ornament3.png"
           alt="Icon 3"
+          width={200}
+          height={210}
           className="absolute bottom-44 left-1/2 w-12 h-12 md:w-auto md:h-auto transform -translate-x-1/2"
         />
-        <img
+        <Image
           src="/Ornament4.png"
           alt="Icon 1"
+          width={200}
+          height={210}
           className="absolute top-40 left-24 w-10 h-10 md:w-auto md:h-auto"
         />
         <img
@@ -54,7 +63,6 @@ export default function HeroSection() {
       <div className="myContainer p-4 flex flex-col md:flex-row items-center  ">
         {/* Left Side (Text Section) */}
         <div className="md:w-1/2 text-center  md:text-left">
-          
           {/* Headline */}
           <h1 className="py-4 text-4xl md:text-5xl lg:text-6xl font-bold leading-snug md:leading-tight lg:leading-[75px]">
             Super easy to{" "}

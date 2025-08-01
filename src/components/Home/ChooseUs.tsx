@@ -1,13 +1,16 @@
 import React from "react";
 import { Separator } from "@/components/ui/separator";
 import { LuArrowRightCircle } from "react-icons/lu";
+import Image from "next/image";
 
 const ChooseUs = () => {
   return (
     <div className="relative mx-auto py-16 md:py-24 flex flex-col lg:flex-row gap-10">
-      <img
+      <Image
         src="/co1.png"
         alt="Icon 1"
+        width={500}
+        height={500}
         className="absolute -bottom-36 left-1s  md:w-auto md:h-auto"
       />
 
@@ -17,9 +20,11 @@ const ChooseUs = () => {
         <div className="lg:w-1/2 space-y-8 lg:pr-8 pt-8 lg:pt-16 md:text-left text-center">
           {/* First Coll */}
           <div className="space-y-2 pt-10">
-            <img
+            <Image
               src="/C1.png"
               alt="Eye Icon"
+              width={48}
+              height={48}
               className="h-12 w-12 mx-auto lg:mx-0"
             />
             <h3 className="text-lg font-bold">
@@ -35,9 +40,11 @@ const ChooseUs = () => {
 
           {/* Second Coll */}
           <div className="space-y-2">
-            <img
+            <Image
               src="/C2.png"
               alt="Easy To Use Icon"
+              width={48}
+              height={48}
               className="h-12 w-12 mx-auto lg:mx-0"
             />
             <h3 className="text-lg font-bold">Easy To Use</h3>
@@ -55,9 +62,11 @@ const ChooseUs = () => {
         <div className="lg:w-1/2 space-y-8 pt-8 lg:pt-16 lg:pl-8 text-center md:text-left">
           {/* First Coll */}
           <div className="space-y-2">
-            <img
+            <Image
               src="/C4.png"
               alt="Referral System Icon"
+              width={48}
+              height={48}
               className="h-12 w-12 mx-auto lg:mx-0"
             />
             <h3 className="text-lg font-bold">Referral System</h3>
@@ -70,9 +79,11 @@ const ChooseUs = () => {
 
           {/* Second Coll */}
           <div className="space-y-2">
-            <img
+            <Image
               src="/C3.png"
               alt="Security Icon"
+              width={48}
+              height={48}
               className="h-12 w-12 mx-auto lg:mx-0"
             />
             <h3 className="text-lg font-bold">Secure Application</h3>

@@ -4,10 +4,11 @@ import { FiShare2 } from "react-icons/fi";
 import { FaRegComments } from "react-icons/fa";
 import { IoEyeOutline } from "react-icons/io5";
 import { Avatar, AvatarImage } from "../ui/avatar";
+import Image from "next/image";
 
 const cards = [
   {
-    imgSrc: "blogs/b1.png",
+    imgSrc: "/blogs/b1.png",
     date: "Apr 20, 2024",
     views: "500 Views",
     liked: "200 Liked",
@@ -20,7 +21,7 @@ const cards = [
       "There are thousands of free and premium Word-Press themes available, catering...",
   },
   {
-    imgSrc: "blogs/b2.png",
+    imgSrc: "/blogs/b2.png",
     date: "Apr 20, 2024",
     views: "500 Views",
     liked: "200 Liked",
@@ -33,7 +34,7 @@ const cards = [
       "There are thousands of free and premium Word-Press themes available, catering...",
   },
   {
-    imgSrc: "blogs/b3.png",
+    imgSrc: "/blogs/b3.png",
     date: "Apr 20, 2024",
     views: "500 Views",
     liked: "200 Liked",
@@ -46,7 +47,7 @@ const cards = [
       "There are thousands of free and premium Word-Press themes available, catering...",
   },
   {
-    imgSrc: "blogs/b4.png",
+    imgSrc: "/blogs/b4.png",
     date: "Apr 20, 2024",
     views: "500 Views",
     liked: "200 Liked",
@@ -64,14 +65,18 @@ const Blogs = () => {
   return (
     <section className="relative">
       {/* Decoration  */}
-      <img
+      <Image
         src="/blogs/deco1.png"
         alt="Icon 3"
+        width={456}
+        height={456}
         className="absolute -bottom-92 left-0 w-[456px] -z-20"
       />
-      <img
+      <Image
         src="/blogs/deco2.png"
         alt="Icon 1"
+        width={456}
+        height={456}
         className="absolute top-0 right-16 w-44"
       />
 
@@ -97,9 +102,11 @@ const Blogs = () => {
             >
               <div className="relative">
                 {/* Image */}
-                <img
+                <Image
                   src={card.imgSrc}
                   alt={`Card Image ${idx + 1}`}
+                  width={400}
+                  height={300}
                   className="w-full p-4 h-60 rounded-[15px]"
                 />
                 <div className="absolute top-7 left-7 text-white text-xs px-3 py-2 rounded border border-white border-opacity-60 backdrop-blur-lg">
@@ -155,7 +162,9 @@ const Blogs = () => {
 
                     <span className="w-1 h-1 bg-[#546A7E]  rounded-full mx-1"></span>
 
-                    <p className="text-[#546A7E] dark:text-slate-400 text-[10px]">{card.read}</p>
+                    <p className="text-[#546A7E] dark:text-slate-400 text-[10px]">
+                      {card.read}
+                    </p>
                   </div>
                 </div>
 

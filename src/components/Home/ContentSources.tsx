@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Content from "./Content";
+import Image from "next/image";
 
 const carouselItems = [
   <Content key="content-1" />,
@@ -32,20 +33,26 @@ const ContentSources = () => {
           "linear-gradient(134.17deg, rgba(25, 194, 221, 0.1) 1.77%, rgba(74, 43, 241, 0.1) 98.9%)",
       }}
     >
-      <img
+      <Image
         src="/content/r1.png"
         alt="Icon 1"
-        className="absolute top-0 right-0 w-10 h-10 md:w-auto md:h-auto"
+        width={200}
+        height={210}
+        className="absolute top-10 right-0 w-30 h-30 md:w-auto md:h-auto"
       />
-      <img
+      <Image
         src="/content/r2.png"
         alt="Icon 1"
-        className="absolute top-32 right-0 w-10 h-10 md:w-auto md:h-auto"
+        width={200}
+        height={210}
+        className="absolute top-40 right-0 w-30 h-30 md:w-auto md:h-auto"
       />
-      <img
+      <Image
         src="/content/r3.png"
         alt="Icon 1"
-        className="absolute top-16 right-0 w-10 h-10 md:w-auto md:h-auto"
+        width={200}
+        height={210}
+        className="absolute top-12 right-0 w-30 h-30 md:w-auto md:h-auto"
       />
 
       {/* Content */}

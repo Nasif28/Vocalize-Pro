@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 const CarouselItem = () => {
   function Card({
@@ -19,12 +20,20 @@ const CarouselItem = () => {
         className="relative p-10 bg-white dark:text-gray-300 dark:bg-slate-900 rounded-xl shadow-lg text-gray-800 mb-6 text-left"
         style={{ borderBottom: `10px solid ${borderColor}` }}
       >
-        <img
+        <Image
           src={deco}
           alt={title}
+          width={100}
+          height={110}
           className="absolute bottom-20 right-6 w-10 h-10 md:w-auto md:h-auto"
         />
-        <img src={logo} alt={title} className="w-[63px] h-[67px]" />
+        <Image
+          src={logo}
+          alt={title}
+          width={100}
+          height={110}
+          className="w-[50px] h-[50px]"
+        />
         <h3 className="text-3xl font-bold mt-8">{title}</h3>
         <p className="text-lg leading-6 mt-6">{description}</p>
       </div>

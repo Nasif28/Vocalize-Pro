@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 
 const CarouselItem = () => {
@@ -13,7 +14,13 @@ const CarouselItem = () => {
   }) {
     return (
       <div className="p-8 py-12 bg-white dark:bg-gray-800 rounded-lg shadow-lg text-gray-800 dark:text-gray-200 mb-6 text-left">
-        <img src={logo} alt={title} className="w-[63px] h-[67px]" />
+        <Image
+          src={logo}
+          alt={title}
+          width={100}
+          height={110}
+          className="w-[63px] h-[67px]"
+        />
         <h3 className="text-3xl font-bold my-4">{title}</h3>
         <p className="text-sm leading-6">{description}</p>
       </div>

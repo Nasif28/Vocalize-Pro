@@ -3,6 +3,7 @@ import React from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { useState } from "react";
 import { FiPhone } from "react-icons/fi";
+import Image from "next/image";
 
 const Footer = () => {
   const [email, setEmail] = useState("");
@@ -20,50 +21,65 @@ const Footer = () => {
     >
       {/* Background Icons */}
       <div className="absolute inset-0 pointer-events-none">
-        <img
+        <Image
           src="/footer/f1.png"
           alt="Icon 1"
-          className="absolute bottom-20 left-0 "
+          width={200}
+          height={210}
+          className="absolute bottom-52 left-0 "
         />
-        <img
+        <Image
           src="/footer/f8.png"
           alt="Icon 2"
+          width={200}
+          height={210}
           className="absolute top-60 left-12"
         />
-        <img
+        <Image
           src="/footer/f4.png"
           alt="Icon 3"
-          className="absolute bottom-4 left-24 "
+          width={200}
+          height={210}
+          className="absolute bottom-0 left-20 "
         />
-        <img
+        <Image
           src="/footer/f2.png"
           alt="Icon 1"
-          className="absolute top-16 right-28"
+          width={400}
+          height={410}
+          className="absolute top-48 right-2"
         />
-        <img
+        <Image
           src="/footer/f3.png"
           alt="Icon 2"
+          width={200}
+          height={210}
           className="absolute top-24 right-28 "
         />
-        <img
+        <Image
           src="/footer/f5.png"
           alt="Icon 3"
+          width={200}
+          height={210}
           className="absolute bottom-1/2 right-0"
         />
-        <img
+        <Image
           src="/footer/f6.png"
           alt="Icon 1"
+          width={200}
+          height={210}
           className="absolute bottom-1/3 right-0"
         />
-        <img
+        <Image
           src="/footer/f7.png"
           alt="Icon 1"
-          className="absolute bottom-1/3 right-12"
+          width={200}
+          height={210}
+          className="absolute bottom-2/4 right-10"
         />
       </div>
 
       <div className="myContainer relative">
-        
         {/* Newsletter Section */}
         <div className="relative  container mx-auto  py-16 text-center">
           <h2 className="text-2xl md:text-5xl font-bold text-white py-4">
