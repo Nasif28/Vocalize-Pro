@@ -1,6 +1,5 @@
 import Achievements from "@/components/Home/Achievements";
 import Blogs from "@/components/Home/Blogs";
-import CarouselItem from "@/components/Home/CarouselItem";
 import ChooseUs from "@/components/Home/ChooseUs";
 import Footer from "@/components/Home/Footer";
 import HeroSection from "@/components/Home/HeroSection";

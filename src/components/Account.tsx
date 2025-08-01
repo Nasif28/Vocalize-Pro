@@ -1,5 +1,4 @@
 "use client";
-import React, { useState } from "react";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -10,10 +9,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import Link from "next/link";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { signOut } from "next-auth/react";
 
 const Account = () => {
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   return (
     <DropdownMenu>
       <DropdownMenuTrigger className="focus:outline-none">

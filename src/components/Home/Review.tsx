@@ -169,7 +169,7 @@ const Review = () => {
               </div>
 
               <p className="italic text-lg text-gray-600 dark:text-gray-300 my-6 xl:w-1/2 mx-auto">
-                "{activeTestimonial.review}"
+                &quot;{activeTestimonial.review}&quot;
               </p>
 
               <div className="">

@@ -5,11 +5,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import Image from "next/image";
 
 const FAQ = () => {
   return (
     <div
-    id="faq"
+      id="faq"
       className="relative py-20 text-white text-center"
       style={{
         backgroundImage: 'url("faq.png")',
@@ -23,7 +24,9 @@ const FAQ = () => {
       />
 
       <div className="relative z-10 text-center">
-        <h3 className="text-4xl md:text-5xl font-bold">Frequently Asked Questions </h3>
+        <h3 className="text-4xl md:text-5xl font-bold">
+          Frequently Asked Questions{" "}
+        </h3>
         <p className="text-xl py-6">
           Explore your question to let us know more
         </p>
@@ -32,7 +35,12 @@ const FAQ = () => {
         <div className="flex flex-col mx-auto xl:flex-row gap-14 py-8">
           {/* Left Column - Image */}
           <div className="xl:w-1/2 mx-auto">
-            <img src="/faq2.png" alt="FAQ Image" className="rounded-lg" />
+            <Image
+              src="/faq2.png"
+              alt="FAQ Image"
+              fill
+              className="rounded-lg"
+            />
           </div>
 
           {/* Right Column - Accordion */}
@@ -55,8 +63,9 @@ const FAQ = () => {
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
+                  normal distribution of letters, as opposed to using
+                  &apos;Content here, content here&apos;, making it look like
+                  readable English.
                 </AccordionContent>
               </AccordionItem>
 
@@ -72,8 +81,9 @@ const FAQ = () => {
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
+                  normal distribution of letters, as opposed to using
+                  &apos;Content here, content here&apos;, making it look like
+                  readable English.
                 </AccordionContent>
               </AccordionItem>
 
@@ -89,8 +99,9 @@ const FAQ = () => {
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
+                  normal distribution of letters, as opposed to using
+                  &apos;Content here, content here&apos;, making it look like
+                  readable English.
                 </AccordionContent>
               </AccordionItem>
 
@@ -106,8 +117,9 @@ const FAQ = () => {
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
+                  normal distribution of letters, as opposed to using
+                  &apos;Content here, content here&apos;, making it look like
+                  readable English.
                 </AccordionContent>
               </AccordionItem>
 
@@ -123,8 +135,9 @@ const FAQ = () => {
                   It is a long established fact that a reader will be distracted
                   by the readable content of a page when looking at its layout.
                   The point of using Lorem Ipsum is that it has a more-or-less
-                  normal distribution of letters, as opposed to using 'Content
-                  here, content here', making it look like readable English.
+                  normal distribution of letters, as opposed to using
+                  &apos;Content here, content here&apos;, making it look like
+                  readable English.
                 </AccordionContent>
               </AccordionItem>
             </Accordion>

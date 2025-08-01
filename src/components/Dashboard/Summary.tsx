@@ -54,7 +54,6 @@ const Summary = () => {
             dataKey="value"
             cornerRadius={10}
             fill="#3457FF"
-            clockWise
           />
           <text
             x="50%"

@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Switch } from "@headlessui/react";
 import { Button } from "@/components/ui/button";
 import { LuCheckCircle } from "react-icons/lu";
-import { RiCoinsLine, RiVipCrownFill, RiRocketFill } from "react-icons/ri"; // Add different icons
+import { RiCoinsLine } from "react-icons/ri";
 import { BsCashCoin } from "react-icons/bs";
 import { LiaCoinsSolid } from "react-icons/lia";
 import { IoCashOutline } from "react-icons/io5";

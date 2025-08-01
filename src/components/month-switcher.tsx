@@ -28,8 +28,8 @@ export function MonthSwitcher() {
           <ChevronDown />
         </Button>
       </DropdownMenuTrigger>
-      
-      <DropdownMenuContent align="end" variant="ghost">
+
+      <DropdownMenuContent align="end">
         <DropdownMenuItem onClick={() => handleMonthChange("January")}>
           January
         </DropdownMenuItem>

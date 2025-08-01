@@ -7,10 +7,10 @@ import { LanguageSwitcher } from "../language-switcher";
 import { NavMenu } from "../NavMenu";
 import Account from "../Account";
 import { useSession, signIn } from "next-auth/react";
-import { CircleUser, Menu } from "lucide-react"; // Hamburger Icon
+import { CircleUser } from "lucide-react";
 import { RiMenu3Fill } from "react-icons/ri";
 import { GoPersonAdd } from "react-icons/go";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"; // Import Sheet components
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Navbar() {
   const { data: session } = useSession();

@@ -1,6 +1,6 @@
 "use client";
 import * as React from "react";
-import { PieChart, Pie, Cell } from "recharts";
+import { PieChart, Pie, Cell, PieLabelRenderProps } from "recharts";
 import { Card, CardContent } from "@/components/ui/card";
 import { MonthSwitcher } from "../month-switcher";
 import ViewMore from "../ViewMore";
@@ -20,8 +20,18 @@ const renderLabel = ({
   innerRadius,
   outerRadius,
   percent,
-  index,
-}) => {
+}: PieLabelRenderProps) => {
+  if (
+    typeof cx !== "number" ||
+    typeof cy !== "number" ||
+    typeof innerRadius !== "number" ||
+    typeof outerRadius !== "number" ||
+    typeof midAngle !== "number" ||
+    typeof percent !== "number"
+  ) {
+    return null;
+  }
+
   const radius = innerRadius + (outerRadius - innerRadius) * 0.5;
   const x = cx + radius * Math.cos(-midAngle * RADIAN);
   const y = cy + radius * Math.sin(-midAngle * RADIAN);

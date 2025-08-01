@@ -2,22 +2,26 @@
 import React, { useState } from "react";
 import CarouselItem from "./CarouselItem";
 
-const carouselItems = [<CarouselItem />, <CarouselItem />, <CarouselItem />];
+const carouselItems = [
+  <CarouselItem key="slide-1" />,
+  <CarouselItem key="slide-2" />,
+  <CarouselItem key="slide-3" />,
+];
 
 const Solution = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  // const nextSlide = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex === carouselItems.length - 1 ? 0 : prevIndex + 1
+  //   );
+  // };
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? carouselItems.length - 1 : prevIndex - 1
-    );
-  };
+  // const prevSlide = () => {
+  //   setCurrentIndex((prevIndex) =>
+  //     prevIndex === 0 ? carouselItems.length - 1 : prevIndex - 1
+  //   );
+  // };
 
   return (
     <section

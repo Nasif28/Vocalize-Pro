@@ -1,11 +1,7 @@
-import AuthTabs from '@/components/auth/AuthTabs';
+"use client";
 
-const Login = () => {
-  return (
-    <>
-      <AuthTabs />
-    </>
-  );
-};
+import Login from "@/components/auth/Login";
 
-export default Login;
+export default function AuthPage() {
+  return <Login />;
+}
