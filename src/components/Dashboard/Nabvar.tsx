@@ -11,7 +11,7 @@ import { RiMenu3Fill } from "react-icons/ri";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useState } from "react";
 import { Button } from "../ui/button";
-import NotificationIcon from "../notificationIcon";
+import NotificationIcon from "../NotificationIcon";
 
 const NavbarDashboard = () => {
   const { data: session } = useSession();

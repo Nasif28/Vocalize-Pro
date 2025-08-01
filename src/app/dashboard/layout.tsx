@@ -5,10 +5,14 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import Navbar from "@/components/Dashboard/Nabvar";
 import Sidebar from "@/components/Dashboard/Sidebar";
+import { useSelector } from "react-redux";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
   const { data: session, status } = useSession();
   const router = useRouter();
+
+  // const UserProfile = () => {
+  //   const user = useSelector((state) => state.auth.user);
 
   useEffect(() => {
     if (status === "unauthenticated") {

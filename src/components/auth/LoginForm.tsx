@@ -23,6 +23,8 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { useDispatch } from "react-redux";
+import { loginFailure, loginStart, loginSuccess } from "@/app/store/authSlice";
 
 const formSchema = z.object({
   email: z
@@ -52,6 +54,7 @@ const LoginForm = () => {
   const searchParams = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [loginError, setLoginError] = useState<string | null>(null);
+  const dispatch = useDispatch();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -61,6 +64,7 @@ const LoginForm = () => {
 
   const handleSubmit = async (data: z.infer<typeof formSchema>) => {
     setIsSubmitting(true);
+    dispatch(loginStart()); // Dispatch login start action
     setLoginError(null);
 
     const callbackUrl = searchParams.get("callbackUrl") || "/";
@@ -75,8 +79,10 @@ const LoginForm = () => {
     setIsSubmitting(false);
 
     if (res?.ok && res?.url) {
+      dispatch(loginSuccess({ name: data.email, email: data.email })); // Dispatch login success
       router.push(res.url);
     } else {
+      dispatch(loginFailure("Invalid email or password.")); // Dispatch login failure
       setLoginError("Invalid email or password.");
     }
   };
