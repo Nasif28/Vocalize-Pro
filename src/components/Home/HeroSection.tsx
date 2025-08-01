@@ -42,7 +42,7 @@ export default function HeroSection() {
           height={210}
           className="absolute top-40 left-24 w-10 h-10 md:w-auto md:h-auto"
         />
-        <img
+        <Image
           src="/Ornament5.png"
           alt="Icon 2"
           className="absolute bottom-24 right-28 w-10 h-10 md:w-auto md:h-auto"
