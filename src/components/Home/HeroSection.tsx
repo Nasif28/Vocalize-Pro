@@ -45,16 +45,22 @@ export default function HeroSection() {
         <Image
           src="/Ornament5.png"
           alt="Icon 2"
+          width={200}
+          height={210}
           className="absolute bottom-24 right-28 w-10 h-10 md:w-auto md:h-auto"
         />
-        <img
+        <Image
           src="/Ornament6.png"
           alt="Icon 3"
+          width={200}
+          height={210}
           className="absolute -bottom-12 left-0 w-10 h-10 md:w-auto md:h-auto"
         />
-        <img
+        <Image
           src="/Ornament7.png"
           alt="Icon 1"
+          width={200}
+          height={210}
           className="hidden md:block absolute top-32 left-96 w-10 h-10 md:w-auto md:h-auto"
         />
       </div>
@@ -68,10 +74,12 @@ export default function HeroSection() {
             Super easy to{" "}
             <span className="text-orange-400 relative">
               transcribe
-              <img
+              <Image
                 src="/Vector 1.png"
                 alt="Icon"
                 className="absolute left-1/2 transform -translate-x-1/2 -translate-y-1"
+                width={300}
+                height={30}
               />
             </span>{" "}
             audio, video, or recordings into social media posts, blogs,
@@ -104,36 +112,48 @@ export default function HeroSection() {
         {/* Right Side (Image Section) */}
         <div className="mt-6 md:mt-0 md:w-1/2 flex justify-center relative">
           {/* Background Image */}
-          <img
+          <Image
             src="/heroellipse.png"
             alt="Background Design"
+            width={500}
+            height={500}
             className="absolute w-3/4 md:w-auto z-10 max-h-full"
           />
 
           {/* Foreground Image */}
-          <img
+          <Image
             src="/hero.png"
             alt="Transcription Service"
+            width={500}
+            height={500}
             className="relative w-3/4 md:w-auto z-20 max-h-full"
           />
-          <img
+          <Image
             src="/Ornament8.png"
             alt="Icon 2"
+            width={200}
+            height={210}
             className="absolute top-64 left-20 w-10 h-10 md:w-auto md:h-auto"
           />
-          <img
+          <Image
             src="/Ornament9.png"
             alt="Icon 3"
+            width={200}
+            height={210}
             className="absolute top-24 left-36 w-10 h-10 md:w-auto md:h-auto"
           />
-          <img
+          <Image
             src="/Ornament10.png"
             alt="Icon 3"
+            width={200}
+            height={210}
             className="absolute top-60 right-24 w-10 h-10 md:w-auto md:h-auto"
           />
-          <img
+          <Image
             src="/Ornament11.png"
             alt="Icon 3"
+            width={200}
+            height={210}
             className="absolute top-20 right-40 w-10 h-10 md:w-auto md:h-auto"
           />
         </div>

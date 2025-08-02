@@ -38,7 +38,8 @@ const FAQ = () => {
             <Image
               src="/faq2.png"
               alt="FAQ Image"
-              fill
+              width={1000}
+              height={1000}
               className="rounded-lg"
             />
           </div>

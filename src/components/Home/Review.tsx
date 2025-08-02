@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React, { useState } from "react";
 
 const testimonials = [
@@ -57,14 +58,18 @@ const Review = () => {
 
   return (
     <div className="relative">
-      <img
+      <Image
         src="/review/pd1.png"
         alt="Icon 1"
+        width={200}
+        height={210}
         className="absolute top-20 left-16 w-10 h-10 md:w-auto md:h-auto"
       />
-      <img
+      <Image
         src="/review/pd3.png"
         alt="Icon 2"
+        width={200}
+        height={210}
         className="absolute -bottom-1/2 right-0 w-10 h-10 md:w-auto md:h-auto"
       />
 
@@ -97,9 +102,11 @@ const Review = () => {
                   }}
                   onClick={() => setActiveTestimonial(testimonial)}
                 >
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    width={200}
+                    height={210}
                     className="rounded-full object-cover w-full h-full"
                   />
                 </div>
@@ -122,9 +129,11 @@ const Review = () => {
                   }}
                   onClick={() => setActiveTestimonial(testimonial)}
                 >
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    width={200}
+                    height={210}
                     className="rounded-full object-cover w-full h-full"
                   />
                 </div>
@@ -143,9 +152,11 @@ const Review = () => {
                   }`}
                   onClick={() => setActiveTestimonial(testimonial)}
                 >
-                  <img
+                  <Image
                     src={testimonial.image}
                     alt={testimonial.name}
+                    width={200}
+                    height={210}
                     className="rounded-full object-cover w-full h-full"
                   />
                 </div>
@@ -154,16 +165,20 @@ const Review = () => {
 
             {/* Active Testimonial */}
             <div className="my-12 text-center">
-              <img
+              <Image
                 src="/review/pd2.png"
                 alt={activeTestimonial.name}
+                width={200}
+                height={210}
                 className="mx-auto w-20 h-14 my-10"
               />
 
               <div className="w-72 h-72 mx-auto my-8 rounded-full overflow-hidden">
-                <img
+                <Image
                   src={activeTestimonial.image}
                   alt={activeTestimonial.name}
+                  width={800}
+                  height={800}
                   className="object-cover w-full h-full"
                 />
               </div>

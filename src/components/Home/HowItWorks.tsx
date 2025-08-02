@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const HowItWorks = () => {
@@ -21,34 +22,44 @@ const HowItWorks = () => {
           </p>
         </div>
 
-        <img
+        <Image
           src="/work/s3.png"
           alt="Icon 1"
           className="absolute top-10 right-20 w-10 h-10 md:w-auto md:h-auto"
+          width={500}
+          height={400}
         />
-        <img
+        <Image
           src="/work/s1.png"
           alt="Icon 1"
           className="absolute top-1/3 right-0 w-10 h-10 md:w-auto md:h-auto"
+          width={500}
+          height={400}
         />
-        <img
+        <Image
           src="/work/s2.png"
           alt="Icon 1"
           className="absolute bottom-1/2 left-12 w-10 h-10 md:w-auto md:h-auto"
+          width={500}
+          height={400}
         />
 
         {/* First Row */}
         <div className="flex flex-col md:flex-row items-center my-8 py-12 relative text-center md:text-left">
           <div className="md:w-1/3 flex justify-center md:block mb-6 md:mb-0">
             <div className="relative p-4">
-              <img
+              <Image
                 src="/work/wr1.png"
                 alt="Sign Up/Registration"
+                width={500}
+                height={400}
                 className="rounded-lg  -z-10 absolute -bottom-32 -left-32"
               />
-              <img
+              <Image
                 src="/work/w1.png"
                 alt="Sign Up/Registration"
+                width={500}
+                height={400}
                 className="rounded-lg "
               />
             </div>
@@ -79,10 +90,12 @@ const HowItWorks = () => {
           </div>
 
           {/* Arrow to Next Row */}
-          <img
+          <Image
             src="/work/a1.png"
             alt="Sign Up/Registration"
-            className="rounded-lg  absolute hidden md:block"
+            width={1000}
+            height={400}
+            className="rounded-lg absolute hidden md:block"
             style={{
               left: "45%",
               transform: "translateX(-50%)",
@@ -122,24 +135,30 @@ const HowItWorks = () => {
           {/* Image  */}
           <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
-              <img
+              <Image
                 src="/work/wr2.png"
                 alt="Sign Up/Registration"
                 className="rounded-lg  -z-10 absolute -bottom-20 -right-12"
+                width={500}
+                height={400}
               />
-              <img
+              <Image
                 src="/work/w2.png"
                 alt="Sign Up/Registration"
                 className="rounded-lg "
+                width={500}
+                height={400}
               />
             </div>
           </div>
 
           {/* Arrow to Next Row */}
-          <img
+          <Image
             src="/work/a2.png"
             alt="Sign Up/Registration"
-            className="rounded-lg  absolute hidden md:block"
+            width={1000}
+            height={400}
+            className="rounded-lg absolute hidden md:block"
             style={{
               left: "45%",
               transform: "translateX(-50%)",
@@ -154,14 +173,18 @@ const HowItWorks = () => {
         <div className="flex flex-col md:flex-row items-center my-8 py-12 relative text-center md:text-left">
           <div className="md:w-1/3 flex justify-center md:block mb-6 md:mb-0">
             <div className="relative p-4">
-              <img
+              <Image
                 src="/work/wr3.png"
                 alt="Sign Up/Registration"
                 className="rounded-lg  -z-10 absolute -bottom-24 -left-24"
+                width={500}
+                height={400}
               />
-              <img
+              <Image
                 src="/work/w3.png"
                 alt="Sign Up/Registration"
+                width={500}
+                height={400}
                 className="rounded-lg "
               />
             </div>
@@ -191,10 +214,12 @@ const HowItWorks = () => {
           </div>
 
           {/* Arrow to Next Row */}
-          <img
+          <Image
             src="/work/a1.png"
             alt="Sign Up/Registration"
-            className="rounded-lg  absolute hidden md:block"
+            width={1000}
+            height={400}
+            className="rounded-lg absolute hidden md:block"
             style={{
               left: "45%",
               transform: "translateX(-50%)",
@@ -233,24 +258,30 @@ const HowItWorks = () => {
           {/* Image  */}
           <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
-              <img
+              <Image
                 src="/work/wr4.png"
                 alt="Sign Up/Registration"
-                className="rounded-lg  -z-10 absolute -bottom-20 -right-12"
+                width={500}
+                height={400}
+                className="rounded-lg -z-10 absolute -bottom-20 -right-12"
               />
-              <img
+              <Image
                 src="/work/w4.png"
                 alt="Sign Up/Registration"
+                width={500}
+                height={400}
                 className="rounded-lg "
               />
             </div>
           </div>
 
           {/* Arrow to Next Row */}
-          <img
+          <Image
             src="/work/a2.png"
             alt="Sign Up/Registration"
-            className="rounded-lg  absolute hidden md:block"
+            width={1000}
+            height={400}
+            className="rounded-lg absolute hidden md:block"
             style={{
               left: "45%",
               transform: "translateX(-50%)",
@@ -265,15 +296,19 @@ const HowItWorks = () => {
         <div className="flex flex-col md:flex-row items-center my-8 py-12 relative text-center md:text-left">
           <div className="md:w-1/3 flex justify-center md:block mb-6 md:mb-0">
             <div className="relative p-4">
-              <img
+              <Image
                 src="/work/wr5.png"
                 alt="Sign Up/Registration"
                 className="rounded-lg  -z-10 absolute -bottom-24 -left-24"
+                width={500}
+                height={400}
               />
-              <img
+              <Image
                 src="/work/w5.png"
                 alt="Sign Up/Registration"
                 className="rounded-lg "
+                width={500}
+                height={400}
               />
             </div>
           </div>
@@ -302,10 +337,12 @@ const HowItWorks = () => {
           </div>
 
           {/* Arrow to Next Row */}
-          <img
+          <Image
             src="/work/a1.png"
             alt="Sign Up/Registration"
-            className="rounded-lg  absolute hidden md:block"
+            width={1000}
+            height={400}
+            className="rounded-lg absolute hidden md:block"
             style={{
               left: "45%",
               transform: "translateX(-50%)",
@@ -344,24 +381,30 @@ const HowItWorks = () => {
           {/* Image  */}
           <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
-              <img
+              <Image
                 src="/work/wr6.png"
                 alt="Sign Up/Registration"
-                className="rounded-lg  -z-10 absolute -bottom-12 -right-12"
+                width={500}
+                height={400}
+                className="rounded-lg -z-10 absolute -bottom-12 -right-12"
               />
-              <img
+              <Image
                 src="/work/w6.png"
                 alt="Sign Up/Registration"
+                width={500}
+                height={400}
                 className="rounded-lg "
               />
             </div>
           </div>
 
           {/* Arrow to Next Row */}
-          <img
+          <Image
             src="/work/a2.png"
             alt="Sign Up/Registration"
-            className="rounded-lg  absolute hidden md:block"
+            width={1000}
+            height={400}
+            className="rounded-lg absolute hidden md:block"
             style={{
               left: "45%",
               transform: "translateX(-50%)",
@@ -376,14 +419,18 @@ const HowItWorks = () => {
         <div className="flex flex-col md:flex-row items-center my-8 py-12 relative text-center md:text-left">
           <div className="md:w-1/3 flex justify-center md:block mb-6 md:mb-0">
             <div className="relative p-4">
-              <img
+              <Image
                 src="/work/wr7.png"
                 alt="Sign Up/Registration"
-                className="rounded-lg  -z-10 absolute -bottom-12 -left-12"
+                width={500}
+                height={400}
+                className="rounded-lg -z-10 absolute -bottom-12 -left-12"
               />
-              <img
+              <Image
                 src="/work/w7.png"
                 alt="Sign Up/Registration"
+                width={500}
+                height={400}
                 className="rounded-lg "
               />
             </div>
@@ -413,10 +460,12 @@ const HowItWorks = () => {
           </div>
 
           {/* Arrow to Next Row */}
-          <img
+          <Image
             src="/work/a1.png"
             alt="Sign Up/Registration"
-            className="rounded-lg  absolute hidden md:block"
+            width={1000}
+            height={400}
+            className="rounded-lg absolute hidden md:block"
             style={{
               left: "45%",
               transform: "translateX(-50%)",
@@ -455,14 +504,18 @@ const HowItWorks = () => {
           {/* Image  */}
           <div className="md:w-1/3 flex justify-center">
             <div className="relative p-4">
-              <img
+              <Image
                 src="/work/wr8.png"
                 alt="Sign Up/Registration"
-                className="rounded-lg  -z-10 absolute -bottom-20 -right-12"
+                className="rounded-lg -z-10 absolute -bottom-20 -right-12"
+                width={500}
+                height={400}
               />
-              <img
+              <Image
                 src="/work/w8.png"
                 alt="Sign Up/Registration"
+                width={500}
+                height={400}
                 className="rounded-lg "
               />
             </div>

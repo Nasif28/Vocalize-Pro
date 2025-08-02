@@ -8,6 +8,7 @@ import { RiCoinsLine } from "react-icons/ri";
 import { BsCashCoin } from "react-icons/bs";
 import { LiaCoinsSolid } from "react-icons/lia";
 import { IoCashOutline } from "react-icons/io5";
+import Image from "next/image";
 
 const pricingPlans = {
   monthly: [
@@ -166,9 +167,11 @@ const Pricing = () => {
       }}
     >
       <section className="myContainer relative">
-        <img
+        <Image
           src="/s2.png"
           alt="Icon 1"
+          width={200}
+          height={210}
           className="absolute top-20 left-0 w-10 h-10 md:w-auto md:h-auto"
         />
 

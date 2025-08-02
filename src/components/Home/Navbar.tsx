@@ -11,6 +11,7 @@ import { CircleUser } from "lucide-react";
 import { RiMenu3Fill } from "react-icons/ri";
 import { GoPersonAdd } from "react-icons/go";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import Image from "next/image";
 
 export default function Navbar() {
   const { data: session } = useSession();
@@ -26,7 +27,13 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/">
           <div className="flex items-center space-x-2">
-            <img src="/logo.png" alt="Logo" className="h-32px w-32.25px" />
+            <Image
+              src="/logo.png"
+              alt="Logo"
+              width={40}
+              height={40}
+              className="h-32px w-32.25px"
+            />
             <div className="text-[26px] pt-1 font-extrabold">Vocalizepro</div>
           </div>
         </Link>

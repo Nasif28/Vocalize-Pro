@@ -1,6 +1,7 @@
 import React from "react";
 import { LuArrowRightCircle } from "react-icons/lu";
 import { Button } from "../ui/button";
+import Image from "next/image";
 
 const Manage = () => {
   return (
@@ -10,14 +11,18 @@ const Manage = () => {
     >
       {/* Decorative Images */}
       <div className="absolute inset-0 pointer-events-none hidden lg:block">
-        <img
+        <Image
           src="/manage/eli.png"
           alt="Icon 1"
+          width={400}
+          height={400}
           className="absolute bottom-1/2 left-0 transform translate-y-1/2 w-full pointer-events-none"
         />
-        <img
+        <Image
           src="/manage/elips.png"
           alt="Icon 2"
+          width={400}
+          height={400}
           className="absolute top-1/2 right-0 transform -translate-y-1/2 w-[400px] pointer-events-none"
         />
       </div>
@@ -51,10 +56,12 @@ const Manage = () => {
 
         {/* Image Section */}
         <div className="flex justify-center lg:justify-start">
-          <img
+          <Image
             src="/manage/ipad.png"
             alt="Podcast Dashboard"
             className="w-fit object-cover hidden lg:block"
+            width={800}
+            height={800}
           />
         </div>
       </div>
