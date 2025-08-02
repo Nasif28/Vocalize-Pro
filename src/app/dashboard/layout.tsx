@@ -1,22 +1,22 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { useSession } from "next-auth/react";
+// import { useRouter } from "next/navigation";
+// import { useSession } from "next-auth/react";
 import Navbar from "@/components/Dashboard/Nabvar";
 import Sidebar from "@/components/Dashboard/Sidebar";
 
 const MainLayout = ({ children }: { children: React.ReactNode }) => {
-  const { data: session, status } = useSession();
-  const router = useRouter();
+  // const { data: session, status } = useSession();
+  // const router = useRouter();
 
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      router.push(`/auth?callbackUrl=/dashboard`);
-    }
-  }, [status, router]);
+  // useEffect(() => {
+  //   if (status === "unauthenticated") {
+  //     router.push(`/auth?callbackUrl=/dashboard`);
+  //   }
+  // }, [status, router]);
 
-  if (status === "loading" || !session) return null;
+  // if (status === "loading" || !session) return null;
 
   return (
     <div className="bg-slate-100 dark:bg-slate-900">
